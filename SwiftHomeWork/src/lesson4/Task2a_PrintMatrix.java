@@ -9,7 +9,7 @@ package lesson4;
  *
  * @author aizeeck
  */
-public class Тask2а_PrintMatrix {
+public class Task2a_PrintMatrix {
 
     public static void main(String[] args) {
         int counter = 0;

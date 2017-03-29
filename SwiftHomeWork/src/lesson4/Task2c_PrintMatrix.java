@@ -4,7 +4,7 @@ package lesson4;
  *
  * @author aizeeck
  */
-public class Тask2c_PrintMatrix {
+public class Task2c_PrintMatrix {
 
     public static void main(String[] args) {
         int counter = 0;
@@ -15,15 +15,12 @@ public class Тask2c_PrintMatrix {
             for (; row < arr[col].length; row++) {
                 arr[row][col] = ++counter;
             }
-            //printMe(arr);
-
             row--;
             col++;
             for (; row >= 0; row--) {
                 arr[row][col] = ++counter;
             }
             col++;
-            //printMe(arr);
         }
         printMe(arr);
     }

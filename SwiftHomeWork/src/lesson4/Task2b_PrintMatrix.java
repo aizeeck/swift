@@ -4,7 +4,7 @@ package lesson4;
  *
  * @author aizeeck
  */
-public class Тask2b_PrintMatrix {
+public class Task2b_PrintMatrix {
 
     public static void main(String[] args) {
         int counter = 0;
