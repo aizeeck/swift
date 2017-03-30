@@ -41,6 +41,7 @@ public class Task3e_LongestIncreasingSubsequence {
                 isForCopy = false;
             }
             i++;
+            
             j = i;
         }
     }
