@@ -27,30 +27,26 @@ public class Task3e_LongestIncreasingSubsequence {
             int end = 0;
             boolean isForCopy = false;
             while (arr[i] < arr[i + 1]) {
-                //System.out.println("   arr: " + arr[i]);
                 end = ++i;
-                //System.out.println("end: " + end);
                 isForCopy = true;
             }
-            System.out.println(isForCopy);
             if (isForCopy) {
-                System.out.println("  begin: " + begin + "; end: " + end);
                 results[resultCounter++] = Arrays.copyOfRange(arr, begin - 1, end + 1);
-                System.out.println(Arrays.toString(results[resultCounter]));
                 isForCopy = false;
             }
             i++;
-
             j = i;
         }
 
         int maxResultIndex = -1;
-        System.out.println("resSize: " + results.length);
+        int maxResultLen = 0;
         for (int j = 0; j <= resultCounter - 1; j++) {
-            System.out.println(Arrays.toString(results[j]));
-            maxResultIndex = results[j].length > maxResultIndex ? j : maxResultIndex;
-        }
+            if (results[j].length > maxResultLen) {
+                maxResultIndex = j;
+                maxResultLen = results[j].length;
+            }
 
-        System.out.println("            result is: " + Arrays.toString(results[maxResultIndex]));
+        }
+        System.out.println(Arrays.toString(results[maxResultIndex]));
     }
 }
