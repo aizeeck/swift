@@ -13,7 +13,6 @@ public class Task3e_LongestIncreasingSubsequence {
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
         int[] arr = new int[N];
-        int[][] stat = new int[N][3];
         for (int i = 0; i < N; i++) {
             arr[i] = scanner.nextInt();
         }
