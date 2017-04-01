@@ -19,6 +19,8 @@ public class Task4c_CaesarCipher {
                 for (int i = 0; i < input.length(); i++) {
                     if (delimiters.contains(String.valueOf(input.charAt(i)))) {
                         result += String.valueOf(input.charAt(i));
+                    } else if (input.charAt(i) == 'z') {
+                        result += 'a';
                     } else {
                         result += String.valueOf((char) (input.charAt(i) + 1));
                     }
@@ -28,6 +30,8 @@ public class Task4c_CaesarCipher {
                 for (int i = 0; i < input.length(); i++) {
                     if (delimiters.contains(String.valueOf(input.charAt(i)))) {
                         result += String.valueOf(input.charAt(i));
+                    } else if (input.charAt(i) == 'a') {
+                        result += 'z';
                     } else {
                         result += String.valueOf((char) (input.charAt(i) - 1));
                     }
