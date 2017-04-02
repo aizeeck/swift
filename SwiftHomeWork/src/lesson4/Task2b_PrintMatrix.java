@@ -7,27 +7,32 @@ package lesson4;
 public class Task2b_PrintMatrix {
 
     public static void main(String[] args) {
+        int size = 4;
         int counter = 0;
-        int[][] arr = new int[4][4];
-
-        for (int col = 0; col < arr.length;) {
-            int row = 0;
-            for (; row < arr[col].length; row++) {
-                arr[row][col] = ++counter;
+        int[][] arr = new int[size][size];
+        
+        int row = 0;
+        int col = 0;
+        int correctorY = 1;
+        int visits = size;
+        
+        for (int i = 0; i < (size * size); i++) {
+            arr[row][col] = ++counter;
+            if (--visits == 0) {
+                col++;
+                row += correctorY;
+                correctorY *= -1;
+                visits = size;
             }
             //printMe(arr);
-
-            row--;
-            col++;
-            for (; row >= 0; row--) {
-                arr[row][col] = ++counter;
-            }
-            col++;
-            //printMe(arr);
+            //System.out.println();
+            row += correctorY;
         }
+        
         printMe(arr);
     }
-
+    
+    
     private static void printMe(int[][] arr) {
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
