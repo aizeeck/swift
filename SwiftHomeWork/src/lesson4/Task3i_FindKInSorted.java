@@ -34,7 +34,7 @@ public class Task3i_FindKInSorted {
         int right = arr.length;
         int iter = 0;
         int indexOf = -1;
-        for (;;) {
+        do {
             iter++;
             //System.err.println("iter:" + iter);
             mid = left + (right - left) / 2;
@@ -50,7 +50,7 @@ public class Task3i_FindKInSorted {
                 indexOf = mid;
                 break;
             }
-        }
+        } while (left != mid);
         if (indexOf > 0) {
             System.out.println("resultIndex: " + mid + "\niterations:" + iter);
         } else {

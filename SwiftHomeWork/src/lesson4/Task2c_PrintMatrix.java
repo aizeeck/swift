@@ -7,21 +7,16 @@ package lesson4;
 public class Task2c_PrintMatrix {
 
     public static void main(String[] args) {
+        int size = 4;
         int counter = 0;
-        int[][] arr = new int[4][4];
+        int[][] arr = new int[size][size];
 
-        for (int col = 0; col < arr.length;) {
-            int row = 0;
-            for (; row < arr[col].length; row++) {
-                arr[row][col] = ++counter;
-            }
-            row--;
-            col++;
-            for (; row >= 0; row--) {
-                arr[row][col] = ++counter;
-            }
-            col++;
-        }
+        int row = 0;
+        int col = 0;
+        int correctorX = 1;
+        int correctorY = 1;
+
+
         printMe(arr);
     }
 
