@@ -36,10 +36,7 @@ public class Task3i_FindKInSorted {
         int indexOf = -1;
         do {
             iter++;
-            //System.err.println("iter:" + iter);
             mid = left + (right - left) / 2;
-            //System.err.println("mid = " + mid + "; arr[mid] = " + arr[mid] + "; K > arr[mid]" + (K > arr[mid]));
-            
             if (mid >= N) {break;}
             
             if (K < arr[mid]) {
