@@ -6,8 +6,8 @@ package lesson5.task2_Classes;
  */
 public class Person {
 
-    String name;
-    int age;
+    private String name;
+    private int age;
 
     public Person() {
         this.name = "No name";
@@ -15,13 +15,13 @@ public class Person {
     }
 
     public Person(String name) {
-        this.name = name;
+        setName(name);
         this.age = -1;
     }
 
     public Person(String name, int age) {
-        this.name = name;
-        this.age = age;
+        setName(name);
+        setAge(age);
     }
 
     public String getName() {
@@ -42,7 +42,7 @@ public class Person {
     }
 
     public void setAge(int age) {
-        if (age >= 0 && age <= 15) {
+        if (age >= 0 && age <= 150) {
             this.age = age;
         } else {
             System.out.println("Please enter a valid number between 0 and 150.");
