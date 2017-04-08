@@ -11,23 +11,26 @@ import lesson5.task2_Classes.Car;
  * както и по-логично в една реална ситуация Car extends Vehicle.
  */
 public class Vehicle extends Car {
-
-    String type;
-    int licenseNo;
-    double weight;
-    double fuelConsumption;
-    String color = "N/A";
+    
+    static int licenseNoTemp = 0;
+    private String type;
+    private int licenseNo;
+    private double weight;
+    private double fuelConsumption;
+    private String color = "N/A";
 
     public Vehicle(String type, String model, int power, double fuelConsumption, int deliveryYear) {
         super(model, deliveryYear, power);
         this.type = type;
         this.fuelConsumption = fuelConsumption;
+        this.licenseNo = licenseNoTemp++;
     }
 
     public Vehicle(String type, String model, int power, double fuelConsumption, int deliveryYear, double weight, String color) {
         super(model, deliveryYear, power);
         this.type = type;
         this.fuelConsumption = fuelConsumption;
+        this.licenseNo = licenseNoTemp++;
         this.weight = weight;
         this.color = color;
     }
