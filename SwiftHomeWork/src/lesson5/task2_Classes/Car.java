@@ -21,6 +21,12 @@ public class Car {
         this.deliveryYear = deliveryYear;
     }
 
+    public Car(String model, int deliveryYear, int power) {
+        this.model = model;
+        this.power = power;
+        this.deliveryYear = deliveryYear;
+    }
+
     public int insuranceCategory() {
         int category = 0;
         int currentYear = new Date().getYear() + 1900;
@@ -58,7 +64,7 @@ public class Car {
         return getAdjustedTaxValue(taxValue);
     }
 
-    private double getAdjustedTaxValue (double initialTaxValue) {
+    private double getAdjustedTaxValue(double initialTaxValue) {
         int power = getPower();
         if (power <= 80) {
             return initialTaxValue * 1.2;
@@ -68,7 +74,7 @@ public class Car {
             return initialTaxValue;
         }
     }
-    
+
     public void setBrand(String brand) {
         this.brand = brand;
     }
@@ -85,6 +91,10 @@ public class Car {
         this.deliveryYear = deliveryYear;
     }
 
+    public String getModel() {
+        return model;
+    }
+
     public int getPower() {
         return power;
     }
@@ -97,13 +107,13 @@ public class Car {
     public String toString() {
         return "Car{" + "brand=" + brand + ", model=" + model + ", power=" + power + ", deliveryYear=" + deliveryYear + '}';
     }
-        
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Car c = new Car(
-                scanner.next(), 
-                scanner.next(), 
-                scanner.nextInt(), 
+                scanner.next(),
+                scanner.next(),
+                scanner.nextInt(),
                 scanner.nextInt()
         );
         System.out.println(c.getTaxValue());
