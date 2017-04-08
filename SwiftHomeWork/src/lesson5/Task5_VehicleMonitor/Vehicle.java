@@ -1,7 +1,7 @@
-package lesson5.VehicleMonitor;
+package lesson5.Task5_VehicleMonitor;
 
 import java.util.Date;
-import lesson5.task2_Classes.Car;
+import lesson5.Task2_Classes.Car;
 
 /**
  *

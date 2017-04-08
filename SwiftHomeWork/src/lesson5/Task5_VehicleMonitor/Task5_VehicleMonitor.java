@@ -1,4 +1,4 @@
-package lesson5.VehicleMonitor;
+package lesson5.Task5_VehicleMonitor;
 
 import java.io.BufferedReader;
 import java.io.IOException;

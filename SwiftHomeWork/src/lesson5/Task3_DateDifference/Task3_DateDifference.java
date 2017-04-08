@@ -1,4 +1,4 @@
-package lesson5.SwiftDate;
+package lesson5.Task3_DateDifference;
 
 import java.util.Scanner;
 

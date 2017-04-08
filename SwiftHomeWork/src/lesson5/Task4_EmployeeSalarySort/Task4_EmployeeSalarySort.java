@@ -1,4 +1,4 @@
-package lesson5.EmployeeSalarySort;
+package lesson5.Task4_EmployeeSalarySort;
 
 import java.io.BufferedReader;
 import java.io.IOException;

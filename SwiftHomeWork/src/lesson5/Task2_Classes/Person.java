@@ -1,4 +1,4 @@
-package lesson5.task2_Classes;
+package lesson5.Task2_Classes;
 
 /**
  *
