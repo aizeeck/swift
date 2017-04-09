@@ -59,6 +59,8 @@ public class SwiftDate {
 
         for (int i = 0; i < getMonth(); i++) {
             switch (i) {
+                case 2:
+                    days += isLeapYear() ? 29 : 28;
                 case 1:
                 case 3:
                 case 5:
