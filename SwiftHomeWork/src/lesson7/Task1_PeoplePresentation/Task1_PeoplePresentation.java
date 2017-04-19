@@ -21,13 +21,6 @@ public class Task1_PeoplePresentation {
             Persone p = createPersone(line.split(" "));
             System.out.println(p + "\n");
         }
-        
-        
-//        Student s = new Student("Sergey", "Vizirskiy", "000001", 8, 4);
-//        Worker w = new Worker("Sergey", "Vizirskiy", 1000, 1);
-//        System.out.println(s.toString());
-//        System.out.println();
-//        System.out.println(w.toString());
     }
     
     private static Persone createPersone(String[] personeStrings) {
