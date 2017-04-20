@@ -8,11 +8,11 @@ import java.util.Scanner;
  */
 public class Task2_UniversityManagement {
 
-
+    private static Person[] people = new Person[10];
 
     public static void main(String[] args) {
 
-        Person[] person = new Person[10];
+
         int personCounter = 0;
 
         Scanner scanner = new Scanner(System.in);
@@ -26,7 +26,9 @@ public class Task2_UniversityManagement {
 
             switch (command[0]) {
                 case "NEW":
-                    person[personCounter++] = createPersone(command);
+                    people[personCounter++] = createPersone(command);
+                case "WORK":
+
             }
         }
         
@@ -51,5 +53,15 @@ public class Task2_UniversityManagement {
                 return new Student(command[2], command[3], command[4], subjects);
             default: return null;
         }
+    }
+
+    private static void work(String[] command) {
+        for (Person p : people) {
+            if (p.getName().equals(command[1])) p.work();
+        }
+    }
+
+    public static Person[] getPeople() {
+        return people;
     }
 }

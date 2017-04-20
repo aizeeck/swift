@@ -11,4 +11,9 @@ private String[] subjects;
         super(firstName, phone, 25);
         this.subjects = subjects;
     }
+
+    @Override
+    public void work() {
+
+    }
 }
