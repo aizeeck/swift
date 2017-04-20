@@ -6,8 +6,8 @@ package lesson7.Task2_UniversityManagement;
  */
 public class MaintenanceEmployee extends Employee {
 
-    public MaintenanceEmployee(String firstName, String phone, double hourSalary) {
-        super(firstName, phone, hourSalary);
+    public MaintenanceEmployee(String firstName, String phone) {
+        super(firstName, phone, 15);
     }
     
     

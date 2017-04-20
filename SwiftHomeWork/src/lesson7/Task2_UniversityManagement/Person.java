@@ -4,11 +4,11 @@ package lesson7.Task2_UniversityManagement;
  *
  * @author aizeeck
  */
-public class Persone {
+public class Person {
     private String name;
     private String phone;
 
-    public Persone(String name, String phone) {
+    public Person(String name, String phone) {
         this.name = name;
         this.phone = phone;
     }

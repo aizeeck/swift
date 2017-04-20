@@ -4,7 +4,7 @@ package lesson7.Task2_UniversityManagement;
  *
  * @author aizeeck
  */
-public class Employee extends Persone {
+public class Employee extends Person {
 
     private double hourSalary;
     private int tolerance;
