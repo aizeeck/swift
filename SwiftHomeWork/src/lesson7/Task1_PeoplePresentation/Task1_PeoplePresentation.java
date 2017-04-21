@@ -1,7 +1,6 @@
 package lesson7.Task1_PeoplePresentation;
 
 import java.util.Scanner;
-import lesson6.Task4_Market.MarketManager;
 
 /**
  *
