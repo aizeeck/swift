@@ -8,12 +8,12 @@ import java.util.Scanner;
  */
 public class Task2_UniversityManagement {
 
-    private static Person[] people = new Person[10];
+    private static Person[] people = new Person[6];
+    private static int personCounter = 0;
+    private static Person unhappyPerson;
+    private static double balance = 500;
 
     public static void main(String[] args) {
-
-
-        int personCounter = 0;
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -27,9 +27,26 @@ public class Task2_UniversityManagement {
             switch (command[0]) {
                 case "NEW":
                     people[personCounter++] = createPersone(command);
+                    break;
                 case "WORK":
-
+                    work(command);
+                    break;
+                case "IDLE":
+                    idle();
+                    break;
             }
+            if (unhappyPerson != null) {
+                System.out.println(unhappyPerson.getName() + " is not happy");
+                return;
+            }
+            if (balance <= 0 ) {
+                System.out.println("Bankrupcy");
+                return;
+            }
+        }
+        for (Person p : people) {
+            if (p == null) break;
+            System.out.println(p);
         }
         
     }
@@ -57,11 +74,40 @@ public class Task2_UniversityManagement {
 
     private static void work(String[] command) {
         for (Person p : people) {
-            if (p.getName().equals(command[1])) p.work();
+            if (p != null && p.getName().equals(command[1])) {
+                p.work();
+                if (unhappyPerson != null) {
+                    return;
+                }
+                if (! (p instanceof Student)) {
+                    balance -= ((Employee) p).getHourSalary();
+                }
+                return;
+            }
         }
     }
 
-    public static Person[] getPeople() {
+    private static void idle() {
+        for (Person p : people) {
+            if (p == null) { return;}
+
+            p.increaseTolerance(-5);
+            if (p.getTolerance() <= 0) {
+                unhappyPerson = p;
+                return;
+            }
+        }
+    }
+
+    static Person[] getPeople() {
         return people;
+    }
+
+    static void setUnhappyPerson(Person unhappyPerson) {
+        Task2_UniversityManagement.unhappyPerson = unhappyPerson;
+    }
+
+    static void increaseBalance(int i) {
+        balance += i;
     }
 }

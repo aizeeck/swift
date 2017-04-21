@@ -13,7 +13,8 @@ public abstract class Employee extends Person {
         super(firstName, lastName);
         this.hourSalary = hourSalary;
     }
-    
-    
-    
+
+    public double getHourSalary() {
+        return hourSalary;
+    }
 }

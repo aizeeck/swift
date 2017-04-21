@@ -22,7 +22,7 @@ public abstract class Person {
     @Override
     public String toString() {
         String result = "First name: " + name + "\n"
-                + "Phone : " + phone + "\n";
+                + "Tolerance : " + tolerance + "\n";
         return result;
     }
 
@@ -30,8 +30,10 @@ public abstract class Person {
     abstract public void work();
 
     public void increaseTolerance(int i) {
-        if (i > 0) {
             this.tolerance += i;
-        }
+    }
+
+    public int getTolerance() {
+        return tolerance;
     }
 }

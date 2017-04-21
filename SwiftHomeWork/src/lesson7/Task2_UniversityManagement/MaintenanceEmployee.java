@@ -14,7 +14,9 @@ public class MaintenanceEmployee extends Employee {
     public void work() {
         Person[] people = Task2_UniversityManagement.getPeople();
         for (Person p : people) {
-            p.increaseTolerance(2);
+            if (p != null && !p.equals(this)) {
+                p.increaseTolerance(2);
+            }
         }
     }
 
