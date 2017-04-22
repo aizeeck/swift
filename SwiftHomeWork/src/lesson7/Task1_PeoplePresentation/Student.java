@@ -27,10 +27,20 @@ public class Student extends Persone {
     }
 
     public void setLectureCount(int lectureCount) {
+        if (lectureCount < 0) {
+            System.out.println("Expected positive number for\n" +
+                    "lectureCount.");
+            return;
+        }
         this.lectureCount = lectureCount;
     }
 
     public void setExerciseCount(int exerciseCount) {
+        if (exerciseCount < 0) {
+            System.out.println("Expected positive number for\n" +
+                    "exerciseCount.");
+            return;
+        }
         this.exerciseCount = exerciseCount;
     }
 
