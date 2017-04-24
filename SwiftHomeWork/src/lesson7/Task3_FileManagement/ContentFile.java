@@ -15,17 +15,6 @@ public class ContentFile extends File {
         lastModifiedDate = LocalDateTime.now();
     }
 
-    @Override
-    public void execute() {
-        //System.out.println("Executing " + getFullName() + "");
-
-            if (this.isDeleted()) {return;}
-
-            System.out.println("♫♫♫" + this.getFullName()+ "\n"
-                    + this.getContent() + "\n");
-    }
-
-
     public String getContent() {
         return content;
     }

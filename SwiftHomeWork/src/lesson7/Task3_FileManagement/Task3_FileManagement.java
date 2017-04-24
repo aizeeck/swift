@@ -21,13 +21,13 @@ public class Task3_FileManagement {
                     fileManager.make(command);
                     break;
                 case "MOVE":
-
+                    fileManager.getFiles().get(command[1]);
                     break;
                 case "MOD":
-
+                    fileManager.getFiles().get(command[1]);
                     break;
                 case "COPY":
-
+                    fileManager.getFiles().get(command[1]);
                     break;
                 case "DEL":
                     fileManager.getFiles().get(command[1]).delete();
@@ -59,10 +59,6 @@ public class Task3_FileManagement {
         }
     }
 
-    public Map<String, File> getFiles() {
-        return files;
-    }
-
     private ArrayList<File> retrieveRequiredResources (String[] res) {
         ArrayList<File> requiredResources = new ArrayList<>();
         for (String name : res) {
@@ -74,4 +70,10 @@ public class Task3_FileManagement {
         }
         return requiredResources;
     }
+
+    public Map<String, File> getFiles() {
+        return files;
+    }
+
+
 }
