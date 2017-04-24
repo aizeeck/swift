@@ -20,7 +20,7 @@ public class ExecutableFile extends File {
         System.out.println("Executing " + getFullName() + "");
 
         for (File f : requiredResources) {
-            if (f.isDeleted()) {break;}
+            if (f.isDeleted()) {continue;}
             f.execute();
         }
         lastExecutionDate = LocalDateTime.now();
