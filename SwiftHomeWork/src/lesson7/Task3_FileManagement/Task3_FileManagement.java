@@ -9,24 +9,16 @@ public class Task3_FileManagement {
     private static Map<String, File> files = new LinkedHashMap<>();
 
     public static void main(String[] args) {
-
         Task3_FileManagement fileManager = new Task3_FileManagement();
         Scanner scanner = new Scanner(System.in);
+
         while (true) {
             String line = scanner.nextLine();
             if (line.equals("END")) break;
             String[] command = line.split(" ");
             switch (command[0]) {
                 case "MAKE":
-                    if (command[3].contains("CONTENT") && (command[1].endsWith(".avi") || command[1].endsWith(".mp3"))) {
-                        fileManager.files.put(command[1], new MediaContentFile(command[1], command[2], command[3]));
-                    } else if (command[3].contains("CONTENT")) {
-                        fileManager.files.put(command[1], new DocumentContentFile(command[1], command[2], command[3]));
-                    } else {
-                        String[] res = new String[command.length - 3];
-                        System.arraycopy(command,3, res,0, command.length - 3);
-                        fileManager.files.put(command[1], new ExecutableFile(command[1], command[2], res));
-                    }
+                    fileManager.make(command);
                     break;
                 case "MOVE":
 
@@ -38,13 +30,13 @@ public class Task3_FileManagement {
 
                     break;
                 case "DEL":
-                    fileManager.files.get(command[1]).delete();
+                    fileManager.getFiles().get(command[1]).delete();
                     break;
                 case "EXEC":
-                    fileManager.files.get(command[1]).execute();
+                    fileManager.getFiles().get(command[1]).execute();
                     break;
                 case "INFO":
-                    fileManager.files.get(command[1]).info();
+                    fileManager.getFiles().get(command[1]).info();
                     break;
             }
         }
@@ -52,7 +44,34 @@ public class Task3_FileManagement {
         //fileManager.files.forEach((k,v) -> System.out.println(v + "\n"));
     }
 
-    public static Map<String, File> getFiles() {
+    private void make(String[] command) {
+        if (command[3].contains("CONTENT") && (command[1].endsWith(".avi") || command[1].endsWith(".mp3"))) {
+            this.files.put(command[1],
+                    new MediaContentFile(command[1], command[2], command[3]));
+        } else if (command[3].contains("CONTENT")) {
+            this.files.put(command[1],
+                    new DocumentContentFile(command[1], command[2], command[3]));
+        } else {
+            String[] res = new String[command.length - 3];
+            System.arraycopy(command,3, res,0, command.length - 3);
+            this.files.put(command[1],
+                    new ExecutableFile(command[1], command[2], retrieveRequiredResources(res)));
+        }
+    }
+
+    public Map<String, File> getFiles() {
         return files;
+    }
+
+    private ArrayList<File> retrieveRequiredResources (String[] res) {
+        ArrayList<File> requiredResources = new ArrayList<>();
+        for (String name : res) {
+            for (Map.Entry<String, File> entry: files.entrySet()) {
+                if (entry.getKey().equals(name)) {
+                    requiredResources.add(entry.getValue());
+                }
+            }
+        }
+        return requiredResources;
     }
 }

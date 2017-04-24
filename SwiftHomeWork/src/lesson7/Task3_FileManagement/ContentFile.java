@@ -1,6 +1,5 @@
 package lesson7.Task3_FileManagement;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 /**
@@ -18,12 +17,12 @@ public class ContentFile extends File {
 
     @Override
     public void execute() {
-        System.out.println("Executing " + fullName() + "");
+        //System.out.println("Executing " + getFullName() + "");
 
             if (this.isDeleted()) {return;}
 
-            System.out.println("♫♫♫" + this.fullName()
-                + "\n" + this.getContent());
+            System.out.println("♫♫♫" + this.getFullName()+ "\n"
+                    + this.getContent() + "\n");
     }
 
 

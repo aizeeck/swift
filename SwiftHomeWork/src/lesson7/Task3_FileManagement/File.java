@@ -42,7 +42,7 @@ public class File {
         return name;
     }
 
-    public String fullName() {
+    public String getFullName() {
         return location + "/" + name;
     }
 

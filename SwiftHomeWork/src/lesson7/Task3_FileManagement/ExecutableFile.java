@@ -1,6 +1,5 @@
 package lesson7.Task3_FileManagement;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
@@ -11,32 +10,19 @@ public class ExecutableFile extends File {
     private ArrayList<File> requiredResources = new ArrayList<>();
     private LocalDateTime lastExecutionDate;
 
-    public ExecutableFile(String name, String location, String... requiredResources) {
+    public ExecutableFile(String name, String location, ArrayList<File> requiredResources) {
         super(name, location);
-        addRequiredResources(requiredResources);
-    }
-
-    public void addRequiredResources(String[] requiredResources) {
-        for (String res : requiredResources) {
-            this.requiredResources.add(Task3_FileManagement.getFiles().get(res));
-        }
+        this.requiredResources = requiredResources;
     }
 
     @Override
     public void execute() {
-        System.out.println("Executing " + fullName() + "");
+        System.out.println("Executing " + getFullName() + "");
 
         for (File f : requiredResources) {
             if (f.isDeleted()) {break;}
-
-            if (f instanceof ContentFile) {
-                System.out.println("♫♫♫" + f.fullName()
-                + "\n" + ((MediaContentFile) f).getContent());
-            } else if(f instanceof ExecutableFile) {
-                f.execute();
-            }
+            f.execute();
         }
-        System.out.println();
         lastExecutionDate = LocalDateTime.now();
     }
 
