@@ -19,7 +19,7 @@ public class File {
     }
 
     public void move(String newLocation) {
-
+        location = newLocation;
     }
 
     public void copy(String newLocation) {
@@ -45,6 +45,8 @@ public class File {
     public String getFullName() {
         return location + "/" + name;
     }
+
+
 
     public boolean isDeleted() {
         return isDeleted;

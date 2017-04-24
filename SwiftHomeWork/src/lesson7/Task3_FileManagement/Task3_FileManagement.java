@@ -21,10 +21,10 @@ public class Task3_FileManagement {
                     fileManager.make(command);
                     break;
                 case "MOVE":
-                    fileManager.getFiles().get(command[1]);
+                    fileManager.getFiles().get(command[1]).move(command[2]);
                     break;
                 case "MOD":
-                    fileManager.getFiles().get(command[1]);
+                    fileManager.mod(command);
                     break;
                 case "COPY":
                     fileManager.getFiles().get(command[1]);
@@ -40,8 +40,14 @@ public class Task3_FileManagement {
                     break;
             }
         }
-
         //fileManager.files.forEach((k,v) -> System.out.println(v + "\n"));
+    }
+
+    private void mod(String[] command) {
+        File f = files.get(command[1]);
+        if (f instanceof ContentFile) {
+            ((ContentFile) f).modify(command[2]);
+        }
     }
 
     private void make(String[] command) {

@@ -11,15 +11,15 @@ public class ContentFile extends File {
 
     public ContentFile(String name, String location, String content) {
         super(name, location);
-        this.content = content;
-        lastModifiedDate = LocalDateTime.now();
+        modify(content);
     }
 
     public String getContent() {
         return content;
     }
 
-    public void modify() {
+    public void modify(String content) {
+        this.content = content.substring(content.indexOf("=")+1, content.length());
         lastModifiedDate = LocalDateTime.now();
     }
 
