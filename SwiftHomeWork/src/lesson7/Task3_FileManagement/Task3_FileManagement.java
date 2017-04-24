@@ -4,6 +4,8 @@ import java.util.*;
 
 /**
  * Created by aizeeck on 22.04.17.
+ *
+ * Копиран файл презаписва съществуващ в Map. Да се смени с друг контейнер.
  */
 public class Task3_FileManagement {
     private static Map<String, File> files = new LinkedHashMap<>();
@@ -27,7 +29,7 @@ public class Task3_FileManagement {
                     fileManager.mod(command);
                     break;
                 case "COPY":
-                    fileManager.getFiles().get(command[1]);
+                    fileManager.copy(command);
                     break;
                 case "DEL":
                     fileManager.getFiles().get(command[1]).delete();
@@ -41,6 +43,23 @@ public class Task3_FileManagement {
             }
         }
         //fileManager.files.forEach((k,v) -> System.out.println(v + "\n"));
+    }
+
+    private void copy(String[] command) {
+        File f = files.get(command[1]);
+        if (f instanceof MediaContentFile) {
+            MediaContentFile mediaContentFile = (MediaContentFile) f;
+            files.put(command[1],
+                    new MediaContentFile(mediaContentFile.getName(), command[2], mediaContentFile.getContent()));
+        } else if (f instanceof DocumentContentFile) {
+            DocumentContentFile documentContentFile = (DocumentContentFile) f;
+            files.put(command[1],
+                    new DocumentContentFile(documentContentFile.getName(), command[2], documentContentFile.getContent()));
+        } else if (f instanceof ExecutableFile) {
+            ExecutableFile executableFile = (ExecutableFile) f;
+            files.put(command[1],
+                    new ExecutableFile(executableFile.getName(), command[2], executableFile.getRequiredResources()));
+        }
     }
 
     private void mod(String[] command) {

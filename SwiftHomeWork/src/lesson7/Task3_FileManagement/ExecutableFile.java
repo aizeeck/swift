@@ -15,6 +15,10 @@ public class ExecutableFile extends File {
         this.requiredResources = requiredResources;
     }
 
+    public ArrayList<File> getRequiredResources() {
+        return requiredResources;
+    }
+
     @Override
     public void execute() {
         System.out.println("Executing " + getFullName() + "");
