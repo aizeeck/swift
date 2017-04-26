@@ -6,10 +6,13 @@ import java.time.LocalDate;
  * Created by aizeeck on 22.04.17.
  */
 public abstract class Education {
-    private String institutionName;
-    private LocalDate enrollmentDate;
-    private LocalDate graduationDate;
-    private boolean graduated;
+
+    protected String degree;
+
+    protected String institutionName;
+    protected LocalDate enrollmentDate;
+    protected LocalDate graduationDate;
+    protected boolean graduated;
 
     public abstract String getDegree();
 

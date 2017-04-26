@@ -1,5 +1,6 @@
 package lesson7.Task4_PersonCharacteristics;
 
+import lesson7.Task4_PersonCharacteristics.education.Education;
 import lesson7.Task4_PersonCharacteristics.education.HigherEducation;
 import lesson7.Task4_PersonCharacteristics.education.PrimaryEducation;
 import lesson7.Task4_PersonCharacteristics.education.SecondaryEducation;
@@ -29,7 +30,7 @@ public class Persone {
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public Persone(String firstName, String lastName, char gender, double tall, LocalDate dateBorn,
-                   SecondaryEducation secondaryEducation) {
+                   Education education) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.gender = gender;

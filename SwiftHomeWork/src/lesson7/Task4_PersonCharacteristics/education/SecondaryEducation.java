@@ -14,14 +14,14 @@ public class SecondaryEducation extends GradedEducation {
     private boolean graduated;
     private double finalGrade;
 
-    public SecondaryEducation(String institutionName, LocalDate enrollmentDate, LocalDate graduationDate) {
+    public SecondaryEducation(String institutionName, LocalDate enrollmentDate, LocalDate graduationDate, String degree) {
         this.institutionName = institutionName;
         this.enrollmentDate = enrollmentDate;
         this.graduationDate = graduationDate;
     }
 
-    public SecondaryEducation(String institutionName, LocalDate enrollmentDate, LocalDate graduationDate, double finalGrade) {
-        this(institutionName, enrollmentDate, graduationDate);
+    public SecondaryEducation(String institutionName, LocalDate enrollmentDate, LocalDate graduationDate, String degree, double finalGrade) {
+        this(institutionName, enrollmentDate,  graduationDate, degree);
         this.finalGrade = finalGrade;
         this.graduated = true;
     }
@@ -30,12 +30,6 @@ public class SecondaryEducation extends GradedEducation {
         this.finalGrade = finalGrade;
         this.graduated = true;
     }
-
-    @Override
-    public String getDegree() {
-        return null;
-    }
-
 
     public String getInstitutionName() {
         return institutionName;

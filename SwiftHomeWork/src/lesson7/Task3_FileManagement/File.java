@@ -22,8 +22,18 @@ public class File {
         location = newLocation;
     }
 
-    public void copy(String newLocation) {
-
+    public File copy(String newLocation) {
+        if (this instanceof MediaContentFile) {
+            MediaContentFile mediaContentFile = (MediaContentFile) this;
+            return new MediaContentFile(mediaContentFile.getName(), newLocation, mediaContentFile.getContent());
+        } else if (this instanceof DocumentContentFile) {
+            DocumentContentFile documentContentFile = (DocumentContentFile) this;
+            return new DocumentContentFile(documentContentFile.getName(), newLocation, documentContentFile.getContent());
+        } else if (this instanceof ExecutableFile) {
+            ExecutableFile executableFile = (ExecutableFile) this;
+            return new ExecutableFile(executableFile.getName(), newLocation, executableFile.getRequiredResources());
+        }
+        return null;
     }
 
     public void delete() {

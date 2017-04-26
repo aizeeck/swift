@@ -47,19 +47,7 @@ public class Task3_FileManagement {
 
     private void copy(String[] command) {
         File f = files.get(command[1]);
-        if (f instanceof MediaContentFile) {
-            MediaContentFile mediaContentFile = (MediaContentFile) f;
-            files.put(command[1],
-                    new MediaContentFile(mediaContentFile.getName(), command[2], mediaContentFile.getContent()));
-        } else if (f instanceof DocumentContentFile) {
-            DocumentContentFile documentContentFile = (DocumentContentFile) f;
-            files.put(command[1],
-                    new DocumentContentFile(documentContentFile.getName(), command[2], documentContentFile.getContent()));
-        } else if (f instanceof ExecutableFile) {
-            ExecutableFile executableFile = (ExecutableFile) f;
-            files.put(command[1],
-                    new ExecutableFile(executableFile.getName(), command[2], executableFile.getRequiredResources()));
-        }
+        files.put(command[1], f.copy(command[2]));
     }
 
     private void mod(String[] command) {

@@ -4,7 +4,7 @@ package lesson7.Task4_PersonCharacteristics.education;
  * Created by aizeeck on 22.04.17.
  */
 public abstract class GradedEducation extends Education {
-    private double finalGrade;
+    protected double finalGrade;
 
     public double getFinalGrade() {
         if (this.isGraduated()) {
@@ -18,5 +18,10 @@ public abstract class GradedEducation extends Education {
     public void gotGraduated(double finalGrade) {
         this.finalGrade = finalGrade;
         setGraduated(true);
+    }
+
+    @Override
+    public String getDegree() {
+        return this.degree;
     }
 }
