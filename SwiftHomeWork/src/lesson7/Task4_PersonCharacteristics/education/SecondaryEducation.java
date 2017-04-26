@@ -18,13 +18,16 @@ public class SecondaryEducation extends GradedEducation {
         this.institutionName = institutionName;
         this.enrollmentDate = enrollmentDate;
         this.graduationDate = graduationDate;
+        this.degree = degree;
     }
 
     public SecondaryEducation(String institutionName, LocalDate enrollmentDate, LocalDate graduationDate, String degree, double finalGrade) {
         this(institutionName, enrollmentDate,  graduationDate, degree);
         this.finalGrade = finalGrade;
-        this.graduated = true;
-    }
+        if (finalGrade > -1) {
+            this.graduated = true;
+        }
+}
 
     public void graduate(double finalGrade) {
         this.finalGrade = finalGrade;

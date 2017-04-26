@@ -1,6 +1,5 @@
 package lesson7.Task4_PersonCharacteristics;
 
-import lesson7.Task2_UniversityManagement.Person;
 import lesson7.Task4_PersonCharacteristics.education.Education;
 import lesson7.Task4_PersonCharacteristics.education.HigherEducation;
 import lesson7.Task4_PersonCharacteristics.education.PrimaryEducation;
@@ -18,10 +17,10 @@ import java.time.format.DateTimeFormatter;
 public class Task4_PersonCharacteristics {
 
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
-    private Persone[] persones;
+    private Person[] people;
 
     public Task4_PersonCharacteristics(int number) {
-        persones = new Persone[number];
+        people = new Person[number];
     }
 
     private Education createEducation(String[] command) {
@@ -40,7 +39,7 @@ public class Task4_PersonCharacteristics {
                         LocalDate.parse(command[7], formatter),
                         LocalDate.parse(command[8], formatter),
                         "Secondary",
-                        Double.parseDouble(command[9])
+                        command.length == 10 ? Double.parseDouble(command[9]) : -1
                 );
             case 'B':
                 return new HigherEducation(
@@ -48,7 +47,7 @@ public class Task4_PersonCharacteristics {
                         LocalDate.parse(command[7], formatter),
                         LocalDate.parse(command[8], formatter),
                         "Bachelor",
-                        Double.parseDouble(command[9])
+                        command.length == 10 ? Double.parseDouble(command[9]) : -1
                 );
             case 'M':
                 return new HigherEducation(
@@ -56,7 +55,7 @@ public class Task4_PersonCharacteristics {
                         LocalDate.parse(command[7], formatter),
                         LocalDate.parse(command[8], formatter),
                         "Master",
-                        Double.parseDouble(command[9])
+                        command.length == 10 ? Double.parseDouble(command[9]) : -1
                 );
             case 'D':
                 return new HigherEducation(
@@ -64,7 +63,7 @@ public class Task4_PersonCharacteristics {
                         LocalDate.parse(command[7], formatter),
                         LocalDate.parse(command[8], formatter),
                         "Doctorate",
-                        Double.parseDouble(command[9])
+                        command.length == 10 ? Double.parseDouble(command[9]) : -1
                 );
         }
         return null;
@@ -80,14 +79,14 @@ public class Task4_PersonCharacteristics {
             String[] characteristics = line.split(";");
             Education education = manager.createEducation(characteristics);
 
-            manager.persones[i] = new Persone(
+            manager.people[i] = new Person(
                     characteristics[0],
                     characteristics[1],
                     characteristics[2].charAt(0),
                     Double.parseDouble(characteristics[3]),
                     LocalDate.parse(characteristics[4], manager.formatter),
                     education);
-            System.out.print(manager.persones[i].toString());
+            System.out.print(manager.people[i].toString());
         }
     }
 }
