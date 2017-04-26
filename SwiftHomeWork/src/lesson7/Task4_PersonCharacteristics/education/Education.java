@@ -13,6 +13,8 @@ public abstract class Education {
 
     public abstract String getDegree();
 
+    public abstract void gotGraduated(double finalGrade);
+
     public String getInstitutionName() {
         return institutionName;
     }
@@ -27,6 +29,10 @@ public abstract class Education {
 
     public boolean isGraduated() {
         return graduated;
+    }
+
+    public void setGraduated(boolean graduated) {
+        this.graduated = graduated;
     }
 
     public void setGraduationDate(LocalDate graduationDate) {

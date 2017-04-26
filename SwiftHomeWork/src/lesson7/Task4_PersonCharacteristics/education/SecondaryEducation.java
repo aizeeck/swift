@@ -21,9 +21,7 @@ public class SecondaryEducation extends GradedEducation {
     }
 
     public SecondaryEducation(String institutionName, LocalDate enrollmentDate, LocalDate graduationDate, double finalGrade) {
-        this.institutionName = institutionName;
-        this.enrollmentDate = enrollmentDate;
-        this.graduationDate = graduationDate;
+        this(institutionName, enrollmentDate, graduationDate);
         this.finalGrade = finalGrade;
         this.graduated = true;
     }
@@ -38,11 +36,7 @@ public class SecondaryEducation extends GradedEducation {
         return null;
     }
 
-    @Override
-    public void gotGraduated() {
-        this.finalGrade = finalGrade;
-        this.graduated = true;
-    }
+
     public String getInstitutionName() {
         return institutionName;
     }

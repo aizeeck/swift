@@ -9,4 +9,9 @@ public class PrimaryEducation extends Education {
     public String getDegree() {
         return null;
     }
+
+    @Override
+    public void gotGraduated(double finalGrade) {
+        setGraduated(true);
+    }
 }

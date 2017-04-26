@@ -14,5 +14,9 @@ public abstract class GradedEducation extends Education {
         }
     }
 
-    public abstract void gotGraduated();
+    @Override
+    public void gotGraduated(double finalGrade) {
+        this.finalGrade = finalGrade;
+        setGraduated(true);
+    }
 }
