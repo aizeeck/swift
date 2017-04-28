@@ -1,9 +1,6 @@
 package lesson8.Task3_PersonCharacteristics;
 
-import lesson8.Task3_PersonCharacteristics.education.Education;
-import lesson8.Task3_PersonCharacteristics.education.HigherEducation;
-import lesson8.Task3_PersonCharacteristics.education.PrimaryEducation;
-import lesson8.Task3_PersonCharacteristics.education.SecondaryEducation;
+import lesson8.Task3_PersonCharacteristics.education.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -23,53 +20,6 @@ public class Task3_PersonCharacteristics {
         people = new Person[number];
     }
 
-    private Education createEducation(String[] command) {
-
-        
-        switch (command[14].charAt(0)) {
-            case 'P':
-                return new PrimaryEducation(
-                        command[15],
-                        LocalDate.parse(command[16], formatter),
-                        LocalDate.parse(command[17], formatter),
-                        "Primary"
-                );
-            case 'S':
-                return new SecondaryEducation(
-                        command[15],
-                        LocalDate.parse(command[16], formatter),
-                        LocalDate.parse(command[17], formatter),
-                        "Secondary",
-                        command.length == 19 ? Double.parseDouble(command[18]) : -1
-                );
-            case 'B':
-                return new HigherEducation(
-                        command[15],
-                        LocalDate.parse(command[16], formatter),
-                        LocalDate.parse(command[17], formatter),
-                        "Bachelor",
-                        command.length == 19 ? Double.parseDouble(command[18]) : -1
-                );
-            case 'M':
-                return new HigherEducation(
-                        command[15],
-                        LocalDate.parse(command[16], formatter),
-                        LocalDate.parse(command[17], formatter),
-                        "Master",
-                        command.length == 19 ? Double.parseDouble(command[18]) : -1
-                );
-            case 'D':
-                return new HigherEducation(
-                        command[15],
-                        LocalDate.parse(command[16], formatter),
-                        LocalDate.parse(command[17], formatter),
-                        "Doctorate",
-                        command.length == 19 ? Double.parseDouble(command[18]) : -1
-                );
-        }
-        return null;
-    }
-
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int iterations = Integer.parseInt(reader.readLine());
@@ -79,7 +29,7 @@ public class Task3_PersonCharacteristics {
             String line = reader.readLine();
             String[] characteristics = line.split(";");
 
-            Education education = manager.createEducation(characteristics);
+            Education education = EducationFactory.createEducation(characteristics);
 
             Address address = new Address(
                     characteristics[6],
