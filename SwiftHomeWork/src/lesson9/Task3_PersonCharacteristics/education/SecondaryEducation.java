@@ -1,4 +1,4 @@
-package lesson8.Task3_PersonCharacteristics.education;
+package lesson9.Task3_PersonCharacteristics.education;
 
 import java.time.LocalDate;
 

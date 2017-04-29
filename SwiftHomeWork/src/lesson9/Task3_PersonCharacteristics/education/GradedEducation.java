@@ -1,4 +1,4 @@
-package lesson8.Task3_PersonCharacteristics.education;
+package lesson9.Task3_PersonCharacteristics.education;
 
 /**
  * Created by aizeeck on 22.04.17.

@@ -1,6 +1,6 @@
-package lesson8.Task3_PersonCharacteristics;
+package lesson9.Task3_PersonCharacteristics;
 
-import lesson8.Task3_PersonCharacteristics.education.*;
+import lesson9.Task3_PersonCharacteristics.education.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;

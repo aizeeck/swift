@@ -1,4 +1,4 @@
-package lesson8.Task3_PersonCharacteristics.education;
+package lesson9.Task3_PersonCharacteristics.education;
 
 import java.time.LocalDate;
 
@@ -21,10 +21,4 @@ public class HigherEducation extends GradedEducation {
             this.graduated = true;
         }
     }
-
-    public HigherEducation(String degree) {
-        this.degree = degree;
-    }
-
-
 }

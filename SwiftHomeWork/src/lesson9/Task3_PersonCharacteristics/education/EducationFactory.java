@@ -1,4 +1,4 @@
-package lesson8.Task3_PersonCharacteristics.education;
+package lesson9.Task3_PersonCharacteristics.education;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -7,7 +7,8 @@ import java.time.format.DateTimeFormatter;
  * Created by aizeeck on 27.04.17.
  */
 public class EducationFactory {
-    public static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
+    private static DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
+
     private EducationFactory() {
     }
 

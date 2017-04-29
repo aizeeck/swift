@@ -1,7 +1,7 @@
-package lesson8.Task3_PersonCharacteristics;
+package lesson9.Task3_PersonCharacteristics;
 
-import lesson8.Task3_PersonCharacteristics.education.Education;
-import lesson8.Task3_PersonCharacteristics.education.GradedEducation;
+import lesson9.Task3_PersonCharacteristics.education.Education;
+import lesson9.Task3_PersonCharacteristics.education.GradedEducation;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
