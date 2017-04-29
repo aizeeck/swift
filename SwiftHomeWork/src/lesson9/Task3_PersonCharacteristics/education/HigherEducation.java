@@ -10,7 +10,7 @@ public class HigherEducation extends GradedEducation {
     public HigherEducation(String institutionName, LocalDate enrollmentDate, LocalDate graduationDate, String degree) {
         this.institutionName = institutionName;
         this.enrollmentDate = enrollmentDate;
-        this.setGraduationDate(graduationDate);
+        this.graduationDate = graduationDate;
         this.degree = degree;
     }
 

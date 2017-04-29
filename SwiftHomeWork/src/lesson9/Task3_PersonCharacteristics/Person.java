@@ -11,10 +11,11 @@ import java.util.ArrayList;
  * @author aizeeck
  */
 public class Person {
+
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private static final LocalDate beginOfTheTime = LocalDate.parse("1900-01-01", formatter);
     private final Address address;
-    ArrayList<Education> educations = new ArrayList<>();
-    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    private final LocalDate beginOfTheTime = LocalDate.parse("1900-01-01", formatter);
+    private ArrayList<Education> educations = new ArrayList<>();
     private LocalDate dateBorn;
     private int yearsOld = 0;
     private char gender = 0;
@@ -30,6 +31,22 @@ public class Person {
 
     public Person(String firstName, String middleName, String lastName, char gender, LocalDate dateBorn, double tall,
                   Address address, Education education) {
+        validator(firstName, middleName, lastName, gender, dateBorn, tall, address, education);
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.gender = gender;
+        this.tall = tall;
+        this.dateBorn = dateBorn;
+        this.address = address;
+        this.educations.add(education);
+        highestLevelEducation = education;
+        yearsOld = LocalDate.now().getYear() - dateBorn.getYear();
+        definePronouns();
+    }
+
+    public static final void validator(String firstName, String middleName, String lastName, char gender, LocalDate dateBorn, double tall,
+                                 Address address, Education education) {
         if (dateBorn.isBefore(beginOfTheTime) && dateBorn.isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("Date of birth is expected to be after 01.01.1900 and before now.");
         }
@@ -42,17 +59,6 @@ public class Person {
         if (gender != 'M' && gender != 'F') {
             throw new IllegalArgumentException("Expected M or F for gender");
         }
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.gender = gender;
-        this.tall = tall;
-        this.dateBorn = dateBorn;
-        this.address = address;
-        this.educations.add(education);
-        highestLevelEducation = education;
-        yearsOld = LocalDate.now().getYear() - dateBorn.getYear();
-        definePronouns();
     }
 
     private void definePronouns() {
