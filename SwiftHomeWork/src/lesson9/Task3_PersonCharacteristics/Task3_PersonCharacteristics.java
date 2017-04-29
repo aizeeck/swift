@@ -51,6 +51,7 @@ public class Task3_PersonCharacteristics {
                     Double.parseDouble(characteristics[5]),
                     address,
                     education);
+
             System.out.println(manager.people[i].toString() + "\n");
         }
     }

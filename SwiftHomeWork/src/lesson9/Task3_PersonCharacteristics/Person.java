@@ -8,18 +8,18 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 /**
- *
  * @author aizeeck
  */
 public class Person {
-
+    private final Address address;
+    ArrayList<Education> educations = new ArrayList<>();
+    private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private final LocalDate beginOfTheTime = LocalDate.parse("1900-01-01", formatter);
     private LocalDate dateBorn;
     private int yearsOld = 0;
     private char gender = 0;
     private double tall = 0.00f;
     private double gradesAverage = 0.00d;
-    private final Address address;
-    ArrayList<Education> educations = new ArrayList<>();
     private Education highestLevelEducation;
     private String firstName = "";
     private String middleName = "";
@@ -27,10 +27,21 @@ public class Person {
     private String pronoun1 = "";
     private String pronoun2 = "";
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
     public Person(String firstName, String middleName, String lastName, char gender, LocalDate dateBorn, double tall,
                   Address address, Education education) {
+        if (dateBorn.isBefore(beginOfTheTime) && dateBorn.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("Date of birth is expected to be after 01.01.1900 and before now.");
+        }
+        if (firstName.isEmpty() || middleName.isEmpty() || lastName.isEmpty()) {
+            throw new IllegalArgumentException("Expected non-empty <first,last,...> name.");
+        }
+        if (40 > tall && tall > 300) {
+            throw new IllegalArgumentException("Expected height is between 40 and 300 cm.");
+        }
+        if (gender != 'M' && gender != 'F') {
+            throw new IllegalArgumentException("Expected M or F for gender");
+        }
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;

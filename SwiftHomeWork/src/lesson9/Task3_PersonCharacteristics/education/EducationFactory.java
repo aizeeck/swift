@@ -54,6 +54,6 @@ public class EducationFactory {
                         command.length == 19 ? Double.parseDouble(command[18]) : -1
                 );
         }
-        return null;
+        throw new IllegalArgumentException("Unrecognized education code.");
     }
 }

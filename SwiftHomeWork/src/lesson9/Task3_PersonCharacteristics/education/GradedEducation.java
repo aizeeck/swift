@@ -1,5 +1,7 @@
 package lesson9.Task3_PersonCharacteristics.education;
 
+import javax.lang.model.element.UnknownElementException;
+
 /**
  * Created by aizeeck on 22.04.17.
  */
@@ -10,12 +12,15 @@ public abstract class GradedEducation extends Education {
         if (this.isGraduated()) {
             return finalGrade;
         } else {
-            return -1;
+            throw new UnsupportedOperationException("No final grade can be provided before graduation.");
         }
     }
 
     @Override
     public void gotGraduated(double finalGrade) {
+        if (2 > finalGrade && finalGrade > 6) {
+            throw new IllegalArgumentException("Graduation grade is expected to be between 2 and 6.");
+        }
         this.finalGrade = finalGrade;
         setGraduated(true);
     }
@@ -24,4 +29,6 @@ public abstract class GradedEducation extends Education {
     public String getDegree() {
         return this.degree;
     }
+
+
 }

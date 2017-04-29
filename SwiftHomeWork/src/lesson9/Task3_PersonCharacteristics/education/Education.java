@@ -39,6 +39,12 @@ public abstract class Education {
     }
 
     public void setGraduationDate(LocalDate graduationDate) {
+        if (graduationDate.isBefore(enrollmentDate)) {
+            throw new IllegalArgumentException("Graduation date is expected to be after enrollment date.");
+        }
+        if (graduationDate.isAfter(LocalDate.now())) {
+            throw new IllegalArgumentException("Graduation date is expected to be a date in the past.");
+        }
         this.graduationDate = graduationDate;
     }
 }
