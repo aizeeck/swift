@@ -12,20 +12,21 @@ public class Account {
     private Customer owner;
 
     public Account(String iban, double balance, double montlyInterestRate, Customer owner) {
-        this.iban = iban;
+        String tmpIban = String.valueOf("00000000" + iban);
+        this.iban = tmpIban.substring(tmpIban.length()-8, tmpIban.length());
         this.balance = balance;
         this.montlyInterestRate = montlyInterestRate;
         this.owner = owner;
     }
 
-    public void dopositAnAmount(double amount) {
+    public void depositAnAmount(double amount) {
         if (amount < 0) {
             throw new IllegalArgumentException("Deposit amount should be a positive");
         }
         balance += amount;
     }
 
-    public void depositAnAmount(double amount) {
-
+    public String getIban() {
+        return iban;
     }
 }

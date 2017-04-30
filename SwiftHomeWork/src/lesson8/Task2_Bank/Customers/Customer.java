@@ -17,4 +17,21 @@ public abstract class Customer {
     public void addAccount(Account acc) {
         accounts.add(acc);
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public ArrayList<Account> getAccounts() {
+        return accounts;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (! (obj instanceof Customer)) {
+            return false;
+        }
+        return ((Customer) obj)
+                .getName().equals(this.getName()) ? true : false;
+    }
 }

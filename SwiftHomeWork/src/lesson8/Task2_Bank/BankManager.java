@@ -2,8 +2,6 @@ package lesson8.Task2_Bank;
 
 import lesson8.Task2_Bank.Customers.Customer;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -19,11 +17,11 @@ public class BankManager {
             String[] command = line.split(" ");
             switch (command[0]) {
                 case "OPEN":
-                    Customer cs = bank.openCustomer(command[1], command[2]);
+                    Customer cs = bank.openCustomer(command[2], command[1]);
                     bank.openAccount(command[3], Double.parseDouble(command[4]), Double.parseDouble(command[5]), cs);
                     break;
                 case "PUT":
-
+                    bank.depositAnAmount(command[1], Double.parseDouble(command[2]));
                     break;
                 case "INFO":
 
