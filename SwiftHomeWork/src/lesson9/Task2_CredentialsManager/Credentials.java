@@ -13,7 +13,11 @@ public class Credentials {
 
     public Credentials(String username, String password) {
         this.username = username;
-        setPassword(password);
+        try {
+            setPassword(password);
+        } catch (OldPasswordConflictException e) {
+            e.printStackTrace();
+        }
     }
 
     public boolean checkPassword(String password) {
@@ -23,7 +27,7 @@ public class Credentials {
         return false;
     }
 
-    public boolean changePassword(Credentials c, String password, String newPassword) {
+    public boolean changePassword(Credentials c, String password, String newPassword) throws OldPasswordConflictException {
         if (c.checkPassword(password)) {
             int tmp = passwordsCounter;
             c.setPassword(newPassword);
@@ -34,7 +38,7 @@ public class Credentials {
         return false;
     }
 
-    private boolean isNewPassValid(String password) {
+    private boolean isNewPassValid(String password) throws OldPasswordConflictException {
         boolean isValid = false;
         boolean isAnOld = isTheNewPassAnOldOne(password);
         if (!isAnOld && password.length() > 1) {
@@ -44,18 +48,20 @@ public class Credentials {
         return isValid;
     }
 
-    private boolean isTheNewPassAnOldOne(String newPassword) {
+    private boolean isTheNewPassAnOldOne(String newPassword) throws OldPasswordConflictException {
         boolean isAnOld = false;
         for (String pass : passwords) {
             if (newPassword.equals(pass)) {
                 isAnOld = true;
-                break;
+                OldPasswordConflictException exception = new OldPasswordConflictException();
+                exception.getPasswordConflictIndex();
+                throw exception;
             }
         }
         return isAnOld;
     }
 
-    public void setPassword(String password) {
+    public void setPassword(String password) throws OldPasswordConflictException {
         if (isNewPassValid(password)) {
             this.password = password;
             passwords[passwordsCounter] = password;

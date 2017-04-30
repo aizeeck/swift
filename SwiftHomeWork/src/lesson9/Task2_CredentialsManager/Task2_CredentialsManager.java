@@ -11,7 +11,7 @@ public class Task2_CredentialsManager {
 
     private ArrayList<Credentials> credentials = new ArrayList<>();
 
-    private String execute(String[] commandSet) {
+    private String execute(String[] commandSet) throws OldPasswordConflictException {
         switch (commandSet[0]) {
             case "ENROLL":
                 if (commandSet.length != 3) {
@@ -76,7 +76,7 @@ public class Task2_CredentialsManager {
         return credentials;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws OldPasswordConflictException {
         Task2_CredentialsManager credentialsManager = new Task2_CredentialsManager();
         Scanner scanner = new Scanner(System.in);
         while (true) {
