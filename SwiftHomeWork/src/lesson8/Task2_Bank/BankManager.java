@@ -24,7 +24,7 @@ public class BankManager {
                     bank.depositAnAmount(command[1], Double.parseDouble(command[2]));
                     break;
                 case "INFO":
-
+                    System.out.println(bank.calculateInterestAmount(command[1], Integer.parseInt(command[2])));
                     break;
             }
             line = scanner.nextLine();

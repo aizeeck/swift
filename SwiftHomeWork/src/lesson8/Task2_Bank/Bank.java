@@ -51,11 +51,19 @@ public class Bank {
             acc.depositAnAmount(amount);
             return;
         }
-        throw new NoSuchElementException("Bank has no client " + input);
+        throw new NoSuchElementException("Bank has no client/account " + input);
     }
 
     public double calculateInterestAmount(String input, int monthNumber) {
-
+        Customer owner = getCustomerByName(input);
+        if (owner != null) {
+            return InterestCalculator.calculateInterestAmount(owner, owner.getAccounts().get(0), monthNumber);
+        }
+        Account acc = getAccountByIBAN(input);
+        if (acc != null) {
+            return InterestCalculator.calculateInterestAmount(acc.getOwner(), owner.getAccounts().get(0), monthNumber);
+        }
+        throw new NoSuchElementException("Bank has no client/account " + input);
     }
 
     private Customer getCustomerByName(String name) {

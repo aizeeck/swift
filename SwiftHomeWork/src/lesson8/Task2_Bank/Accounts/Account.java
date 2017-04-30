@@ -29,4 +29,8 @@ public class Account {
     public String getIban() {
         return iban;
     }
+
+    public Customer getOwner() {
+        return owner;
+    }
 }
