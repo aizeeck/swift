@@ -26,6 +26,13 @@ public class Account {
         balance += amount;
     }
 
+    public void withdrawAnAmount(double amount) {
+        if (amount < 0) {
+            throw new IllegalArgumentException("Withdraw amount should be a positive");
+        }
+        balance -= amount;
+    }
+
     public String getIban() {
         return iban;
     }

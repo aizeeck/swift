@@ -23,6 +23,9 @@ public class BankManager {
                 case "PUT":
                     bank.depositAnAmount(command[1], Double.parseDouble(command[2]));
                     break;
+                case "GET":
+                    bank.withdrawAnAmount(command[1], Double.parseDouble(command[2]));
+                    break;
                 case "INFO":
                     System.out.println(bank.calculateInterestAmount(command[1], Integer.parseInt(command[2])));
                     break;

@@ -37,13 +37,26 @@ public class Bank {
         accounts.add(acc);
         owner.addAccount(acc);
         return acc;
-   }
-
+    }
 
     public void depositAnAmount(String input, double amount) {
         Customer owner = getCustomerByName(input);
         if (owner != null) {
             owner.getAccounts().get(0).depositAnAmount(amount);
+            return;
+        }
+        Account acc = getAccountByIBAN(input);
+        if (acc != null) {
+            acc.depositAnAmount(amount);
+            return;
+        }
+        throw new NoSuchElementException("Bank has no client/account " + input);
+    }
+
+    public void withdrawAnAmount(String input, double amount) {
+        Customer owner = getCustomerByName(input);
+        if (owner != null) {
+            owner.getAccounts().get(0).withdrawAnAmount(amount);
             return;
         }
         Account acc = getAccountByIBAN(input);
