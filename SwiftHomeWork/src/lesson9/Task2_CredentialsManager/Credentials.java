@@ -52,7 +52,6 @@ public class Credentials {
         boolean isAnOld = false;
         for (String pass : passwords) {
             if (newPassword.equals(pass)) {
-                isAnOld = true;
                 OldPasswordConflictException exception = new OldPasswordConflictException();
                 exception.getPasswordConflictIndex();
                 throw exception;
