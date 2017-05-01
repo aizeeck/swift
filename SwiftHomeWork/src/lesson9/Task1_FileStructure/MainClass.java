@@ -12,11 +12,14 @@ public class MainClass {
     public static void main(String[] args) {
         MainClass mainClass = new MainClass();
         Scanner scanner = new Scanner(System.in);
-        String line = "";
+        String line = scanner.nextLine();
 
         while (!line.equals("END")) {
             String[] command = line.split(" ");
             mainClass.linesExecuted++;
+            if (!checkSymbols(command[1])) {
+                System.out.println(mainClass.linesExecuted + " - Invalid name specified");
+            }
             switch (command[0]) {
                 case "mkdir":
                     mainClass.createFolder(command[1]);
@@ -43,7 +46,7 @@ public class MainClass {
 
         if (fd == null) {
 
-            System.out.printf(linesExecuted + " - Directory does not exist.");
+            System.out.println(linesExecuted + " - Directory does not exist.");
         } else {
             FolderObject newElement = new FolderObject(fd, pathParts[pathParts.length - 1], null);
             fd.addChildred(newElement);
@@ -82,10 +85,31 @@ public class MainClass {
         }
 
         if (fd == null) {
-            System.out.printf(linesExecuted + " - Illegal operation.");
+            System.out.println(linesExecuted + " - Illegal operation.");
         } else {
             FileObject newElement = new FileObject(fd, pathParts[pathParts.length - 1]);
             fd.addChildred(newElement);
         }
+    }
+
+    private static boolean checkSymbols(String line) {
+        String correctCharSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789()_!.&/";
+        /*for (char c = 'a'; c <= 'z'; c++) {
+            System.out.print(c);
+        }
+        for (char c = 'A'; c <= 'Z'; c++) {
+            System.out.print(c);
+        }
+        for (int i = 0; i < 10; i++) {
+            System.out.print(i);
+        }*/
+        for (char c : line.toCharArray()) {
+            if (correctCharSet.contains(String.valueOf(c))){
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 }
