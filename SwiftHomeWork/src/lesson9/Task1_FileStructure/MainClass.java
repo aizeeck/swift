@@ -53,25 +53,6 @@ public class MainClass {
         }
     }
 
-    private FolderObject checkExists(FolderObject folderObject, String element, String parentElement) {
-        for (FileSystemObject f : folderObject.getChildren()) {
-            FolderObject folder = null;
-
-            if (f instanceof FolderObject) {
-                folder = (FolderObject) f;
-            } else {
-                return null;
-            }
-
-            if (folder.getName().equals(element) && folder.getParent().getName().equals(parentElement)) {
-                return (FolderObject) folder;
-            } else {
-                continue;
-            }
-        }
-        return null;
-    }
-
     private void createFile(String path) {
         String[] pathParts = path.split("/");
         FolderObject fd = this.buttonDemoProject;
@@ -92,17 +73,27 @@ public class MainClass {
         }
     }
 
+    private FolderObject checkExists(FolderObject folderObject, String element, String parentElement) {
+        for (FileSystemObject f : folderObject.getChildren()) {
+            FolderObject folder = null;
+
+            if (f instanceof FolderObject) {
+                folder = (FolderObject) f;
+            } else {
+                return null;
+            }
+
+            if (folder.getName().equals(element) && folder.getParent().getName().equals(parentElement)) {
+                return (FolderObject) folder;
+            } else {
+                continue;
+            }
+        }
+        return null;
+    }
+
     private static boolean checkSymbols(String line) {
         String correctCharSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789()_!.&/";
-        /*for (char c = 'a'; c <= 'z'; c++) {
-            System.out.print(c);
-        }
-        for (char c = 'A'; c <= 'Z'; c++) {
-            System.out.print(c);
-        }
-        for (int i = 0; i < 10; i++) {
-            System.out.print(i);
-        }*/
         for (char c : line.toCharArray()) {
             if (correctCharSet.contains(String.valueOf(c))){
                 continue;
