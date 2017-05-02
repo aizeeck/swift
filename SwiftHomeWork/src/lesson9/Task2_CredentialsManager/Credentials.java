@@ -44,17 +44,15 @@ public class Credentials {
         if (!isAnOld && password.length() > 1) {
             isValid = true;
         }
-
         return isValid;
     }
 
     private boolean isTheNewPassAnOldOne(String newPassword) throws OldPasswordConflictException {
         boolean isAnOld = false;
-        for (String pass : passwords) {
-            if (newPassword.equals(pass)) {
-                OldPasswordConflictException exception = new OldPasswordConflictException();
-                exception.getPasswordConflictIndex();
-                throw exception;
+        for (int i = 0; i < passwords.length; i++) {
+            if (passwords[i] == null) return isAnOld;
+            if (newPassword.equals(passwords[i])) {
+                throw new OldPasswordConflictException(passwordsCounter - i - 1);
             }
         }
         return isAnOld;

@@ -10,6 +10,7 @@ public class SumLastSixAdded {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LinkedList<Integer> list = new LinkedList<>();
+
         int sum = 0;
         int x = 0;
         do {

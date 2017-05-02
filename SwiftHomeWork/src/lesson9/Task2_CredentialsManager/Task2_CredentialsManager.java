@@ -11,7 +11,7 @@ public class Task2_CredentialsManager {
 
     private ArrayList<Credentials> credentials = new ArrayList<>();
 
-    private String execute(String[] commandSet) throws OldPasswordConflictException {
+    private String execute(String[] commandSet) {
         switch (commandSet[0]) {
             case "ENROLL":
                 if (commandSet.length != 3) {
@@ -28,11 +28,12 @@ public class Task2_CredentialsManager {
                 }
                 Credentials c = this.getUserByName(commandSet[1], commandSet[2]);
                 if (c != null) {
-                    if (c.changePassword(c, commandSet[2], commandSet[3])) {
-                        return "success";
-                    } else {
-                        return "fail";
+                    try {
+                        c.changePassword(c, commandSet[2], commandSet[3]);
+                    } catch (OldPasswordConflictException e){
+                        return "fail " + e.getMessage();
                     }
+                    return "success";
                 }
                 return "fail";
             case "AUTH":

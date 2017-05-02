@@ -5,7 +5,7 @@ import lesson8.Task2_Bank.Customers.Customer;
 /**
  * Created by aizeeck on 29.04.17.
  */
-public class Account {
+public abstract class Account {
     private String iban;
     private double balance;
     private double montlyInterestRate;
