@@ -21,7 +21,7 @@ public class Task3_ParenthesesMatching {
         mapping.put('{', '}');
         char[] bracketArray = line.toCharArray();
 
-        // The algorithm ignores any char except papped ones.
+        // The algorithm ignores any char except papped ones!
         for (Character c : bracketArray) {
             if (openBracket.contains(c)) {
                 stack.push(c);
