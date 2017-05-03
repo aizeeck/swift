@@ -1,4 +1,4 @@
-package lesson10;
+package lesson10_DataStructures;
 
 import java.util.LinkedList;
 import java.util.Scanner;
