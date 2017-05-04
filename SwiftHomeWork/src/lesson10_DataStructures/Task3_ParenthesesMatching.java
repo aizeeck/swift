@@ -22,7 +22,7 @@ public class Task3_ParenthesesMatching {
         char[] bracketArray = line.toCharArray();
 
         // The algorithm ignores any char except papped ones!
-        for (Character c : bracketArray) {
+        for (char c : bracketArray) {
             if (openBracket.contains(c)) {
                 stack.push(c);
             } else if (closeBracket.contains(c)) {
