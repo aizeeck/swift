@@ -1,7 +1,6 @@
 package lesson5.Task2_Classes;
 
 /**
- *
  * @author aizeeck
  */
 public class Person {

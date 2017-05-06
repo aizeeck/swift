@@ -4,7 +4,6 @@ import java.util.Date;
 import java.util.Scanner;
 
 /**
- *
  * @author aizeeck
  */
 public class Car {
