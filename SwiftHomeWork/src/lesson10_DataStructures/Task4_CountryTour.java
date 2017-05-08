@@ -37,6 +37,8 @@ public class Task4_CountryTour {
             }
         }
     }
+//    ...............................................................
+
 
     static void print(ArrayList<Integer[]> cities) {
         cities.forEach(integers -> System.out.print(Arrays.toString(integers)));
