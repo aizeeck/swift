@@ -12,6 +12,14 @@ public class Task9_ExpressionCalculator_v_2 {
 
         Scanner scanner = new Scanner(System.in);
         String expression = scanner.nextLine();
+
+        String result = calculateExpression(expression);
+
+        System.out.printf("%.6f", Double.parseDouble(result));
+    }
+
+    private static String calculateExpression(String expression) {
+
         List<List<String>> signs = new ArrayList<>();
         signs.add(Arrays.asList("^", "dummy"));
         signs.add(Arrays.asList("*", "/"));
@@ -109,7 +117,7 @@ public class Task9_ExpressionCalculator_v_2 {
                 }
             }
         }
-        System.out.printf("%.6f", Double.parseDouble(expression));
+        return expression;
     }
 
     private static String normalizeInBrackets(String expression) {
