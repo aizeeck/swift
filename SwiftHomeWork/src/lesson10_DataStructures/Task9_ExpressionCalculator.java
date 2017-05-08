@@ -15,12 +15,14 @@ import java.util.*;
  */
 public class Task9_ExpressionCalculator {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         String expression = scanner.nextLine();
         List<List<String>> signs = new ArrayList<>();
-        signs.add(Arrays.asList("^", "dumy"));
+        signs.add(Arrays.asList("^", "dummy"));
         signs.add(Arrays.asList("*", "/"));
         signs.add(Arrays.asList("+", "-"));
+
         for (List<String> ss : signs) {
             while (expression.contains(ss.get(0)) || expression.contains(ss.get(1))) {
                 if (expression.contains("(")) {
@@ -32,9 +34,9 @@ public class Task9_ExpressionCalculator {
                 }
             }
         }
+
         System.out.println(expression);
     }
-
 
     private static String normalizeInBrackets(String expression) {
         String normalizedExpression = "";
@@ -67,8 +69,6 @@ public class Task9_ExpressionCalculator {
                 }
             }
         }
-        left = 0;
-        right = 0;
         return normalizedExpression;
     }
 
@@ -94,7 +94,7 @@ public class Task9_ExpressionCalculator {
 
     private static String putBrackets(String expression, List<String> signs) {
         String digitsForLeft = "0123456789.-";
-        String digitsForRight = "0123456789. ";
+        String digitsForRight = "0123456789. -";
         StringBuffer newExpresison = new StringBuffer();
         int left = 0;
         int right = 0;
@@ -111,7 +111,10 @@ public class Task9_ExpressionCalculator {
                         right = expression.length();
                         break;
                     }
-                    if (digitsForRight.contains(String.valueOf(expression.charAt(j))) && !digitsForRight.contains(String.valueOf(expression.charAt(j + 1)))) {
+                    if (digitsForRight.contains(String.valueOf(expression.charAt(j)))
+                            && !digitsForRight.contains(String.valueOf(expression.charAt(j + 1)))
+                            && !"-".contains(String.valueOf(expression.charAt(j + 2)))
+                            ) {
                         right = j;
                         break;
                     }
@@ -126,8 +129,6 @@ public class Task9_ExpressionCalculator {
                 if (right < expression.length() - 1) {
                     newExpresison.append(expression.substring(right + 3, expression.length()));
                 }
-                left = right + 3;
-                i = right + 3;
                 return newExpresison.toString();
             }
         }
@@ -135,5 +136,6 @@ public class Task9_ExpressionCalculator {
     }
 }
 
-//(5 + 3) * 2 - 11 / 2^2
-//(5 + 3) * (2 + 11) * 2 * 2
+//(5 + 3) * 2 - 11 / 2 ^ 2
+//(5 + 3) * (2 + 11) * 2 ^ 2
+// 8 * (2 - 11)
