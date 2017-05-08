@@ -22,10 +22,7 @@ public class Task9_ExpressionCalculator_v_2 {
         }
 
         for (List<String> ss : signs) {
-            int repetitionCnt = 0;
             while (expression.contains(ss.get(0)) || expression.contains(ss.get(1))) {
-                String prevExpression = expression;
-
                 int s0 = expression.indexOf(ss.get(0));
                 int s1 = expression.indexOf(ss.get(1));
                 if (s0 > 0 && s1 > 0 && s1 < s0) {
@@ -45,6 +42,11 @@ public class Task9_ExpressionCalculator_v_2 {
                     s0 = expression.indexOf(ss.get(0));
                     s1 = expression.indexOf(ss.get(1));
                     if (s0 > 0 && s1 > 0 && s1 < s0) {
+                        String tmp = ss.get(0);
+                        ss.set(0, ss.get(1));
+                        ss.set(1, tmp);
+                    }
+                    if (s0 < 0 && s1 > 0) {
                         String tmp = ss.get(0);
                         ss.set(0, ss.get(1));
                         ss.set(1, tmp);
@@ -84,7 +86,6 @@ public class Task9_ExpressionCalculator_v_2 {
                         if (right < expression.length()) {
                             if (!isValueSet) {
                                 buffer.append(value);
-                                isValueSet = true;
                             }
                             buffer.append(expression.substring(right - 1, expression.length()));
                         } else {
@@ -94,7 +95,6 @@ public class Task9_ExpressionCalculator_v_2 {
                             } else {
                                 if (!isValueSet) {
                                     buffer.append(value);
-                                    isValueSet = true;
                                 }
                             }
                         }
@@ -107,15 +107,9 @@ public class Task9_ExpressionCalculator_v_2 {
                 } catch (NumberFormatException e) {
 
                 }
-                /*if (expression.equals(prevExpression)) {
-                    if (repetitionCnt > 1) {
-                        break;
-                    }
-                    repetitionCnt++;
-                }*/
             }
         }
-        System.out.println(expression);
+        System.out.printf("%.6f", Double.parseDouble(expression));
     }
 
     private static String normalizeInBrackets(String expression) {
