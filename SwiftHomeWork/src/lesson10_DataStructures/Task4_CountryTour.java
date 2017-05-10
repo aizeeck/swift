@@ -2,6 +2,7 @@ package lesson10_DataStructures;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -11,7 +12,8 @@ public class Task4_CountryTour {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int citiesCount = scanner.nextInt();
-        ArrayList<Integer[]> cities = new ArrayList<>();
+        List<Integer[]> cities = new ArrayList<>();
+        List<List<Integer[]>> citiesVariant = new ArrayList<>();
 
         for (int i = 0; i < citiesCount; i++) {
             int s1 = scanner.nextInt();
@@ -28,7 +30,7 @@ public class Task4_CountryTour {
             tmp = cities.get(shift);
             cities.set(shift, cities.get(shift - 1));
             cities.set(shift - 1, tmp);
-            print(cities);
+            citiesVariant.add(new ArrayList<>(cities));
             count--;
             if (shift < 2) {
                 shift = max;
@@ -36,11 +38,38 @@ public class Task4_CountryTour {
                 shift--;
             }
         }
+
+        List<List<Integer[]>> goodPaths = new ArrayList<>();
+
+        for (List<Integer[]> currentVar : citiesVariant) {
+            if (isGoodPath(currentVar)) {
+                goodPaths.add(currentVar);
+            }
+        }
+
+
+        goodPaths.forEach(goodPath -> print(goodPath));
     }
 //    ...............................................................
 
+    private static boolean isGoodPath(List<Integer[]> currentVar) {
+        int food = currentVar.get(0)[1];
+        for (int i = 1; i < currentVar.size(); i++) {
+            food = food - currentVar.get(i)[1];
+            if (food >= 0) {
+//                int wayLength = currentVar.get(i + 1)[0];
+                food += currentVar.get(i)[1];
+                continue;
+            } else {
+                return false;
+            }
 
-    static void print(ArrayList<Integer[]> cities) {
+
+        }
+        return true;
+    }
+
+    static void print(List<Integer[]> cities) {
         cities.forEach(integers -> System.out.print(Arrays.toString(integers)));
         System.out.println("\n------------------------------------------");
     }
