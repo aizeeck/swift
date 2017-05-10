@@ -23,7 +23,7 @@ public class Task4_CountryTour {
 
         int count = fuctorial(cities.size());
         int max = cities.size() - 1;
-        System.out.println("var" + count);
+        //System.out.println("var" + count);
         int shift = max;
         Integer[] tmp;
         while (count > 0) {
@@ -57,7 +57,6 @@ public class Task4_CountryTour {
         for (int i = 1; i < currentVar.size(); i++) {
             food = food - currentVar.get(i)[1];
             if (food >= 0) {
-//                int wayLength = currentVar.get(i + 1)[0];
                 food += currentVar.get(i)[1];
                 continue;
             } else {
