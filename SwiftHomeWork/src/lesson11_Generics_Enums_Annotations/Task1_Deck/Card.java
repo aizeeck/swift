@@ -2,10 +2,13 @@ package lesson11_Generics_Enums_Annotations.Task1_Deck;
 
 import lesson11_Generics_Enums_Annotations.Task0_Cards.CardRank;
 import lesson11_Generics_Enums_Annotations.Task0_Cards.CardSuit;
+import lesson11_Generics_Enums_Annotations.Task2_CardsAnnotation.CardsAnnotation;
 
 /**
  * Created by aizeeck on 09.05.17.
  */
+
+@CardsAnnotation(type = "class", category = "CardGames", description = "Represents a card object used to play games with.")
 public class Card implements Comparable<Card> {
 
     private CardSuit cardSuit;

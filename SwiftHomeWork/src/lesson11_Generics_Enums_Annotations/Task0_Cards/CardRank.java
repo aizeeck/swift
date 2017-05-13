@@ -1,8 +1,12 @@
 package lesson11_Generics_Enums_Annotations.Task0_Cards;
 
+import lesson11_Generics_Enums_Annotations.Task2_CardsAnnotation.CardsAnnotation;
+
 /**
  * Created by aizeeck on 09.05.17.
  */
+
+@CardsAnnotation(type = "enum", category = "CardGames", description = "Contains a set of constants for the ranks of a card.")
 public enum CardRank implements Comparable<CardRank> {
 
     Two(2),
