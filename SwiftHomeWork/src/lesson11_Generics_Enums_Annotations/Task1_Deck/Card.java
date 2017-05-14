@@ -19,6 +19,14 @@ public class Card implements Comparable<Card> {
         this.cardRank = cardRank;
     }
 
+    public CardSuit getCardSuit() {
+        return cardSuit;
+    }
+
+    public CardRank getCardRank() {
+        return cardRank;
+    }
+
     @Override
     public int compareTo(Card o) {
         return this.hashCode() - o.hashCode();
@@ -32,5 +40,20 @@ public class Card implements Comparable<Card> {
     @Override
     public int hashCode() {
         return this.cardSuit.getDummyValue() * this.cardRank.getStrength();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        Card that = (Card) obj;
+        if (that.cardSuit != this.cardSuit || that.cardRank != this.cardRank) {
+            return false;
+        }
+
+        return true;
     }
 }
