@@ -11,8 +11,8 @@ import java.util.*;
  */
 public class Task3_War {
 
-    private static ArrayDeque<Card> playerOneDeckTmp = new ArrayDeque<>();
-    private static ArrayDeque<Card> playerTwoDeckTmp = new ArrayDeque<>();
+    private ArrayDeque<Card> playerOneDeckTmp = new ArrayDeque<>();
+    private ArrayDeque<Card> playerTwoDeckTmp = new ArrayDeque<>();
 
     public static void main(String[] args) {
 //        List<ArrayDeque<Card>> cardsSets = getShuffledDeck(2);
@@ -28,11 +28,12 @@ public class Task3_War {
         str = scanner.nextLine();
         ArrayDeque<Card> playerTwoDeck = createDeckFromString(str);
 
-        warGame(playerOneDeck, playerTwoDeck);
+        Task3_War war = new Task3_War();
+        war.warGame(playerOneDeck, playerTwoDeck);
 
     }
 
-    private static void warGame(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck) {
+    private void warGame(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck) {
         int roundCnt = 0;
         while (!playerOneDeck.isEmpty() && !playerTwoDeck.isEmpty()) {
             printPlayersDeck(playerOneDeck, playerTwoDeck);
@@ -57,7 +58,7 @@ public class Task3_War {
         System.out.println("================================================");
     }
 
-    private static void swapCards(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck, int warriorsCount) {
+    private void swapCards(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck, int warriorsCount) {
         int currentWarrior = 0;
         int totalStrengthPlayerOne = 0;
         int totalStrengthplayerTwo = 0;
@@ -102,7 +103,7 @@ public class Task3_War {
         }
     }
 
-    private static void emptyTmpDecks() {
+    private void emptyTmpDecks() {
         playerOneDeckTmp.clear();
         playerTwoDeckTmp.clear();
     }
