@@ -11,18 +11,23 @@ import java.util.*;
  */
 public class Task3_War {
 
+    private static ArrayDeque<Card> playerOneDeckTmp = new ArrayDeque<>();
+    private static ArrayDeque<Card> playerTwoDeckTmp = new ArrayDeque<>();
+
     public static void main(String[] args) {
 //        List<ArrayDeque<Card>> cardsSets = getShuffledDeck(2);
 //        ArrayDeque<Card> playerOneDeck = cardsSets.get(0);
 //        ArrayDeque<Card> playerTwoDeck = cardsSets.get(1);
-        ArrayDeque<Card> playerOneDeck = createDeckFromString("Ts 4c 9h As Qd");
-        ArrayDeque<Card> playerTwoDeck = createDeckFromString("Kc 9d Tc 4d Jd");
 
-//        ArrayDeque<Card> playerOneDeck = createDeckFromString("Tc 7s Ah 5c 9d");
-//        ArrayDeque<Card> playerTwoDeck = createDeckFromString("3d 7d Qs 9h 8c");
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextInt();
 
-//        ArrayDeque<Card> playerOneDeck = createDeckFromString("Ts Jc 5h 6s");
-//        ArrayDeque<Card> playerTwoDeck = createDeckFromString("Tc Js 3d 8h");
+        scanner.nextLine();
+        String str = scanner.nextLine();
+        ArrayDeque<Card> playerOneDeck = createDeckFromString(str);
+        str = scanner.nextLine();
+        ArrayDeque<Card> playerTwoDeck = createDeckFromString(str);
+
         warGame(playerOneDeck, playerTwoDeck);
 
     }
@@ -56,8 +61,8 @@ public class Task3_War {
         int currentWarrior = 0;
         int totalStrengthPlayerOne = 0;
         int totalStrengthplayerTwo = 0;
-        ArrayDeque<Card> playerOneDeckTmp = new ArrayDeque<>();
-        ArrayDeque<Card> playerTwoDeckTmp = new ArrayDeque<>();
+//        ArrayDeque<Card> playerOneDeckTmp = new ArrayDeque<>();
+//        ArrayDeque<Card> playerTwoDeckTmp = new ArrayDeque<>();
 
         while (currentWarrior < warriorsCount && !playerOneDeck.isEmpty() && !playerTwoDeck.isEmpty()) {
             totalStrengthPlayerOne += playerOneDeck.peek().getCardRank().getStrength();
@@ -74,6 +79,7 @@ public class Task3_War {
         if (totalStrengthPlayerOne > totalStrengthplayerTwo) {
             playerOneDeckTmp.forEach(card -> playerOneDeck.addLast(card));
             playerTwoDeckTmp.forEach(card -> playerOneDeck.addLast(card));
+            emptyTmpDecks();
         } else if (totalStrengthPlayerOne == totalStrengthplayerTwo) {
             int playerOneDeckInitSize = playerOneDeck.size();
             int playerTwoDeckInitSize = playerOneDeck.size();
@@ -81,16 +87,24 @@ public class Task3_War {
             if (playerOneDeck.size() > playerOneDeckInitSize) {
                 playerOneDeckTmp.forEach(card -> playerOneDeck.addLast(card));
                 playerTwoDeckTmp.forEach(card -> playerOneDeck.addLast(card));
+                emptyTmpDecks();
             } else if (playerOneDeck.size() > playerTwoDeckInitSize) {
                 playerTwoDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
                 playerOneDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
+                emptyTmpDecks();
             } else {
                 return;
             }
         } else {
             playerTwoDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
             playerOneDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
+            emptyTmpDecks();
         }
+    }
+
+    private static void emptyTmpDecks() {
+        playerOneDeckTmp.clear();
+        playerTwoDeckTmp.clear();
     }
 
     private static TreeSet<Card> getCardsSets() {
