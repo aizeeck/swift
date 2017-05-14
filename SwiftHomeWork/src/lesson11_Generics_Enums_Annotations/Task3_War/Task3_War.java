@@ -89,7 +89,7 @@ public class Task3_War {
                 playerOneDeckTmp.forEach(card -> playerOneDeck.addLast(card));
                 playerTwoDeckTmp.forEach(card -> playerOneDeck.addLast(card));
                 emptyTmpDecks();
-            } else if (playerOneDeck.size() > playerTwoDeckInitSize) {
+            } else if (playerTwoDeck.size() > playerTwoDeckInitSize) {
                 playerTwoDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
                 playerOneDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
                 emptyTmpDecks();
