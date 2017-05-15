@@ -11,8 +11,15 @@ import java.util.*;
  */
 public class Task3_War {
 
-    private ArrayDeque<Card> playerOneDeckTmp = new ArrayDeque<>();
-    private ArrayDeque<Card> playerTwoDeckTmp = new ArrayDeque<>();
+    ArrayDeque<Card> playerOneDeck;
+    ArrayDeque<Card> playerTwoDeck;
+    private ArrayList<ArrayDeque<Card>> playerOneDeckTmpQues = new ArrayList<>();
+    private ArrayList<ArrayDeque<Card>> playerTwoDeckTmpQues = new ArrayList<>();
+
+    public Task3_War(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck) {
+        this.playerOneDeck = playerOneDeck;
+        this.playerTwoDeck = playerTwoDeck;
+    }
 
     public static void main(String[] args) {
 //        List<ArrayDeque<Card>> cardsSets = getShuffledDeck(2);
@@ -28,27 +35,9 @@ public class Task3_War {
         str = scanner.nextLine();
         ArrayDeque<Card> playerTwoDeck = createDeckFromString(str);
 
-        Task3_War war = new Task3_War();
+        Task3_War war = new Task3_War(playerOneDeck, playerTwoDeck);
         war.warGame(playerOneDeck, playerTwoDeck);
 
-    }
-
-    private void warGame(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck) {
-        int roundCnt = 0;
-        while (!playerOneDeck.isEmpty() && !playerTwoDeck.isEmpty()) {
-            printPlayersDeck(playerOneDeck, playerTwoDeck);
-            swapCards(playerOneDeck, playerTwoDeck, 1);
-            roundCnt++;
-        }
-
-        printPlayersDeck(playerOneDeck, playerTwoDeck);
-        if (playerOneDeck.isEmpty() && playerTwoDeck.isEmpty()) {
-            System.out.println("Game is draw on round " + roundCnt + ".");
-        } else if (playerOneDeck.isEmpty()) {
-            System.out.println("Player 2 wins on round " + roundCnt + ".");
-        } else {
-            System.out.println("Player 1 wins on round " + roundCnt + ".");
-        }
     }
 
     private static void printPlayersDeck(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck) {
@@ -56,56 +45,6 @@ public class Task3_War {
         System.out.println("------------------------------------------------");
         System.out.println(playerTwoDeck);
         System.out.println("================================================");
-    }
-
-    private void swapCards(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck, int warriorsCount) {
-        int currentWarrior = 0;
-        int totalStrengthPlayerOne = 0;
-        int totalStrengthplayerTwo = 0;
-//        ArrayDeque<Card> playerOneDeckTmp = new ArrayDeque<>();
-//        ArrayDeque<Card> playerTwoDeckTmp = new ArrayDeque<>();
-
-        while (currentWarrior < warriorsCount && !playerOneDeck.isEmpty() && !playerTwoDeck.isEmpty()) {
-            totalStrengthPlayerOne += playerOneDeck.peek().getCardRank().getStrength();
-            totalStrengthplayerTwo += playerTwoDeck.peek().getCardRank().getStrength();
-            playerOneDeckTmp.addLast(playerOneDeck.pollFirst());
-            playerTwoDeckTmp.addLast(playerTwoDeck.pollFirst());
-            currentWarrior++;
-        }
-
-        if (totalStrengthPlayerOne + totalStrengthPlayerOne == 0) {
-            return;
-        }
-
-        if (totalStrengthPlayerOne > totalStrengthplayerTwo) {
-            playerOneDeckTmp.forEach(card -> playerOneDeck.addLast(card));
-            playerTwoDeckTmp.forEach(card -> playerOneDeck.addLast(card));
-            emptyTmpDecks();
-        } else if (totalStrengthPlayerOne == totalStrengthplayerTwo) {
-            int playerOneDeckInitSize = playerOneDeck.size();
-            int playerTwoDeckInitSize = playerOneDeck.size();
-            swapCards(playerOneDeck, playerTwoDeck, 3);
-            if (playerOneDeck.size() > playerOneDeckInitSize) {
-                playerOneDeckTmp.forEach(card -> playerOneDeck.addLast(card));
-                playerTwoDeckTmp.forEach(card -> playerOneDeck.addLast(card));
-                emptyTmpDecks();
-            } else if (playerTwoDeck.size() > playerTwoDeckInitSize) {
-                playerTwoDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
-                playerOneDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
-                emptyTmpDecks();
-            } else {
-                return;
-            }
-        } else {
-            playerTwoDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
-            playerOneDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
-            emptyTmpDecks();
-        }
-    }
-
-    private void emptyTmpDecks() {
-        playerOneDeckTmp.clear();
-        playerTwoDeckTmp.clear();
     }
 
     private static TreeSet<Card> getCardsSets() {
@@ -171,5 +110,87 @@ public class Task3_War {
             randomCardsSets.add(cardsTmp);
         }
         return randomCardsSets;
+    }
+
+    private void warGame(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck) {
+        int roundCnt = 0;
+        while (!playerOneDeck.isEmpty() && !playerTwoDeck.isEmpty()) {
+            //printPlayersDeck(playerOneDeck, playerTwoDeck);
+            swapCards(playerOneDeck, playerTwoDeck, 1);
+            roundCnt++;
+        }
+
+        //printPlayersDeck(playerOneDeck, playerTwoDeck);
+
+        if (playerOneDeck.isEmpty() && playerTwoDeck.isEmpty()) {
+            System.out.println("Game is draw on round " + roundCnt + ".");
+        } else if (playerOneDeck.isEmpty()) {
+            System.out.println("Player 2 wins on round " + roundCnt + ".");
+        } else {
+            System.out.println("Player 1 wins on round " + roundCnt + ".");
+        }
+    }
+
+    private void swapCards(ArrayDeque<Card> playerOneDeck, ArrayDeque<Card> playerTwoDeck, int warriorsCount) {
+        int currentWarrior = 0;
+        int totalStrengthPlayerOne = 0;
+        int totalStrengthplayerTwo = 0;
+        ArrayDeque<Card> playerOneDeckTmp = new ArrayDeque<>();
+        ArrayDeque<Card> playerTwoDeckTmp = new ArrayDeque<>();
+
+        while (currentWarrior < warriorsCount && !playerOneDeck.isEmpty() && !playerTwoDeck.isEmpty()) {
+            totalStrengthPlayerOne += playerOneDeck.peek().getCardRank().getStrength();
+            totalStrengthplayerTwo += playerTwoDeck.peek().getCardRank().getStrength();
+            playerOneDeckTmp.addLast(playerOneDeck.pollFirst());
+            playerTwoDeckTmp.addLast(playerTwoDeck.pollFirst());
+            currentWarrior++;
+        }
+        playerOneDeckTmpQues.add(playerOneDeckTmp);
+        playerTwoDeckTmpQues.add(playerTwoDeckTmp);
+
+        if (totalStrengthPlayerOne + totalStrengthPlayerOne == 0) {
+            return;
+        }
+
+        if (totalStrengthPlayerOne > totalStrengthplayerTwo) {
+            cardsTmpsTransfers(1);
+        } else if (totalStrengthPlayerOne == totalStrengthplayerTwo) {
+            int playerOneDeckInitSize = playerOneDeck.size();
+            int playerTwoDeckInitSize = playerOneDeck.size();
+            swapCards(playerOneDeck, playerTwoDeck, 3);
+            if (playerOneDeck.size() > playerOneDeckInitSize) {
+                cardsTmpsTransfers(1);
+            } else if (playerTwoDeck.size() > playerTwoDeckInitSize) {
+                cardsTmpsTransfers(2);
+            } else {
+                return;
+            }
+        } else {
+            cardsTmpsTransfers(2);
+        }
+    }
+
+    private void cardsTmpsTransfers(int winnerIndex) {
+        if (winnerIndex == 1) {
+            for (int i = 0; i < playerOneDeckTmpQues.size(); i++) {
+                ArrayDeque<Card> playerOneDeckTmp = playerOneDeckTmpQues.get(i);
+                ArrayDeque<Card> playerTwoDeckTmp = playerTwoDeckTmpQues.get(i);
+                playerOneDeckTmp.forEach(card -> playerOneDeck.addLast(card));
+                playerTwoDeckTmp.forEach(card -> playerOneDeck.addLast(card));
+            }
+        } else {
+            for (int i = 0; i < playerTwoDeckTmpQues.size(); i++) {
+                ArrayDeque<Card> playerOneDeckTmp = playerOneDeckTmpQues.get(i);
+                ArrayDeque<Card> playerTwoDeckTmp = playerTwoDeckTmpQues.get(i);
+                playerTwoDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
+                playerOneDeckTmp.forEach(card -> playerTwoDeck.addLast(card));
+            }
+        }
+        emptyTmpDecks();
+    }
+
+    private void emptyTmpDecks() {
+        playerOneDeckTmpQues.clear();
+        playerTwoDeckTmpQues.clear();
     }
 }
