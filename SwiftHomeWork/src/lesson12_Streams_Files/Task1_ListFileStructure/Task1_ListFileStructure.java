@@ -8,12 +8,15 @@ import java.util.Scanner;
  * Created by aizeeck on 17.05.17.
  */
 public class Task1_ListFileStructure {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-//        String workingDirectory = scanner.nextLine();
-        String workingDirString = "/home/aizeeck/Dropbox/SwiftAcademy/swift/SwiftHomeWork/";
+        String workingDirString = scanner.nextLine();
         File workingDirectory = new File(workingDirString);
-        printFolderContent(workingDirectory);
+        try {
+            printFolderContent(workingDirectory);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private static void printFolderContent(File workingDirectory) throws IOException {
