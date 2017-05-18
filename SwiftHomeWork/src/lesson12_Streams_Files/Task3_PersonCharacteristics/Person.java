@@ -1,7 +1,7 @@
-package lesson12_Streams_Files.Task4_PersonCharacteristics;
+package lesson12_Streams_Files.Task3_PersonCharacteristics;
 
-import lesson12_Streams_Files.Task4_PersonCharacteristics.education.Education;
-import lesson12_Streams_Files.Task4_PersonCharacteristics.education.GradedEducation;
+import lesson12_Streams_Files.Task3_PersonCharacteristics.education.Education;
+import lesson12_Streams_Files.Task3_PersonCharacteristics.education.GradedEducation;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

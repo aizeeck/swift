@@ -1,4 +1,4 @@
-package lesson12_Streams_Files.Task4_PersonCharacteristics.education;
+package lesson12_Streams_Files.Task3_PersonCharacteristics.education;
 
 import java.time.LocalDate;
 
