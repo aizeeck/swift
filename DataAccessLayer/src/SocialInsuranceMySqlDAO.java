@@ -50,7 +50,6 @@ public class SocialInsuranceMySqlDAO implements SocialInsuranceStorage, SocialIn
             query.setCharAt(query.lastIndexOf(","), ';');
             statement.execute(query.toString());
         } catch (SQLException e) {
-            e.printStackTrace();
             throw new DALException();
         }
     }
