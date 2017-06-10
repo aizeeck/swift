@@ -12,11 +12,12 @@ public class CitizenStorageEmptyDAO {
         this.mySQLCredential = credential;
     }
 
-    public int clearSorage(Citizen citizen) throws DALException {
+    public int clearSorage() throws DALException {
         int last_id = 0;
         try (Connection connection = DriverManager.getConnection(
                 mySQLCredential.getUrl(), mySQLCredential.getUname(), mySQLCredential.getPass());) {
-            CallableStatement statement = connection.prepareCall("{call clear_storage()}");
+            CallableStatement statement = connection.prepareCall("{call trancate_tables}");
+            statement.execute();
         } catch (SQLException e1) {
             throw new DALException();
         }

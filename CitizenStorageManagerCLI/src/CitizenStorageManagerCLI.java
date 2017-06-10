@@ -1,3 +1,5 @@
+import DataObjectsFactories.AddressFactory;
+import DataObjectsFactories.EducationFactory;
 import address.Address;
 import education.Education;
 import insurance.SocialInsuranceRecord;
@@ -28,7 +30,17 @@ public class CitizenStorageManagerCLI {
         } else {
             scanner = new Scanner(System.in);
         }
+        trancateTables();
         dataImport(scanner);
+    }
+
+    private static void trancateTables() throws SQLException, DALException {
+        MySQLCredential mySQLCredential = new MySQLCredential(
+                "jdbc:mysql://192.168.1.100:3306/CitizenManagement",
+                "aizeeck",
+                new Scanner(System.in).nextLine());
+        CitizenStorageEmptyDAO citizenStorageEmptyDAO = new CitizenStorageEmptyDAO(mySQLCredential);
+        citizenStorageEmptyDAO.clearSorage();
     }
 
     private static void dataImport(Scanner scanner) throws SQLException, DALException {
