@@ -30,27 +30,25 @@ public class CitizenStorageManagerCLI {
         } else {
             scanner = new Scanner(System.in);
         }
-        trancateTables();
-        dataImport(scanner);
-    }
 
-    private static void trancateTables() throws SQLException, DALException {
+        System.out.println("please type the database password for user azieeck");
         MySQLCredential mySQLCredential = new MySQLCredential(
                 "jdbc:mysql://192.168.1.100:3306/CitizenManagement",
                 "aizeeck",
                 new Scanner(System.in).nextLine());
+
+        trancateTables(mySQLCredential);
+        //dataImport(scanner, mySQLCredential);
+    }
+
+    private static void trancateTables(MySQLCredential mySQLCredential) throws SQLException, DALException {
         CitizenStorageEmptyDAO citizenStorageEmptyDAO = new CitizenStorageEmptyDAO(mySQLCredential);
         citizenStorageEmptyDAO.clearSorage();
     }
 
-    private static void dataImport(Scanner scanner) throws SQLException, DALException {
+    private static void dataImport(Scanner scanner, MySQLCredential mySQLCredential) throws SQLException, DALException {
         System.out.println(LocalDateTime.now());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d.M.yyyy");
-
-        MySQLCredential mySQLCredential = new MySQLCredential(
-                "jdbc:mysql://192.168.1.100:3306/CitizenManagement",
-                "aizeeck",
-                new Scanner(System.in).nextLine());
 
         //skip the first line with the num of records
         scanner.nextLine();
