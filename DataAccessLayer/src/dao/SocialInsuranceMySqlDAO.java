@@ -1,5 +1,10 @@
+package dao;
 
+import credentials.MySQLCredential;
+import exceptions.DALException;
 import insurance.SocialInsuranceRecord;
+import storages.SocialInsuranceInsertionAPI;
+import storages.SocialInsuranceStorage;
 
 import java.sql.*;
 import java.util.ArrayList;

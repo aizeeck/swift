@@ -1,5 +1,9 @@
+package dao;
 
 import address.Address;
+import credentials.MySQLCredential;
+import exceptions.DALException;
+import storages.AddressStorage;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -43,6 +47,7 @@ public class AddressMySqlDAO implements AddressStorage {
             statement.execute();
             last_id = statement.getInt("last_id");
         } catch (SQLException e1) {
+            e1.printStackTrace();
             throw new DALException();
         }
         return last_id;
@@ -70,6 +75,7 @@ public class AddressMySqlDAO implements AddressStorage {
                 }
             }
         } catch (SQLException e1) {
+            e1.printStackTrace();
             throw new DALException();
         }
         return result;

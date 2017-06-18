@@ -1,3 +1,5 @@
+package credentials;
+
 /**
  * Created by aizeeck on 22.05.17.
  */

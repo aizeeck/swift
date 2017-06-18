@@ -1,4 +1,7 @@
-import personaldetails.Citizen;
+package dao;
+
+import credentials.MySQLCredential;
+import exceptions.DALException;
 
 import java.sql.*;
 

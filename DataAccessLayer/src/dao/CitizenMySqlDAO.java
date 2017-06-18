@@ -1,8 +1,13 @@
+package dao;
 
-import address.Address;
+import credentials.MySQLCredential;
+import exceptions.DALException;
 import personaldetails.Citizen;
+import personaldetails.Gender;
+import storages.CitizenStorage;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.*;
 
 /**
@@ -31,6 +36,7 @@ public class CitizenMySqlDAO implements CitizenStorage {
             statement.execute();
             last_id = statement.getInt("last_id");
         } catch (SQLException e1) {
+            e1.printStackTrace();
             throw new DALException();
         }
         return last_id;
@@ -42,14 +48,24 @@ public class CitizenMySqlDAO implements CitizenStorage {
 
         try (Connection connection = DriverManager.getConnection(
                 mySQLCredential.getUrl(), mySQLCredential.getUname(), mySQLCredential.getPass());) {
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Citizens WHERE citizen_id = ?");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM Citizens WHERE id = ?");
             statement.setInt(1, citizenId);
             try (ResultSet resultSet = statement.executeQuery();) {
                 while (resultSet.next()) {
-                    
+                    Citizen citizen = new Citizen(
+                            resultSet.getString("first_name"),
+                            resultSet.getString("middle_name"),
+                            resultSet.getString("last_name"),
+                            resultSet.getString("gender").equals("M") ? Gender.Male : Gender.Female,
+                            resultSet.getInt("height"),
+                            LocalDate.now()
+
+                    );
+                    result.add(citizen);
                 }
             }
         } catch (SQLException e1) {
+            e1.printStackTrace();
             throw new DALException();
         }
         return result;

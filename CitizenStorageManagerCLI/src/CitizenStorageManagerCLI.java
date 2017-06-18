@@ -1,10 +1,18 @@
 import DataObjectsFactories.AddressFactory;
 import DataObjectsFactories.EducationFactory;
 import address.Address;
+import credentials.MySQLCredential;
+import dao.AddressMySqlDAO;
+import dao.CitizenMySqlDAO;
+import dao.CitizenStorageEmptyDAO;
+import dao.SocialInsuranceMySqlDAO;
 import education.Education;
+import exceptions.DALException;
 import insurance.SocialInsuranceRecord;
 import personaldetails.Citizen;
 import personaldetails.Gender;
+import storages.AddressStorage;
+import storages.CitizenStorage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -33,12 +41,12 @@ public class CitizenStorageManagerCLI {
 
         System.out.println("please type the database password for user azieeck");
         MySQLCredential mySQLCredential = new MySQLCredential(
-                "jdbc:mysql://192.168.1.100:3306/CitizenManagement",
+                "jdbc:mysql://aizeeck.no-ip.org:3306/CitizenManagement",
                 "aizeeck",
                 new Scanner(System.in).nextLine());
 
         trancateTables(mySQLCredential);
-        //dataImport(scanner, mySQLCredential);
+        dataImport(scanner, mySQLCredential);
     }
 
     private static void trancateTables(MySQLCredential mySQLCredential) throws SQLException, DALException {

@@ -9,4 +9,5 @@ public class Task3_PersonCharacteristics {
     }
 
 
+
 }

@@ -1,3 +1,6 @@
+package storages;
+
+import exceptions.DALException;
 import insurance.SocialInsuranceRecord;
 
 import java.util.List;

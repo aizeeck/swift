@@ -16,8 +16,8 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="DataObjects" />
     <orderEntry type="module" module-name="DataAccessLayer1" />
+    <orderEntry type="module" module-name="DataObjects" />
     <orderEntry type="module" module-name="DataAccessLayer" />
   </component>
 </module>
