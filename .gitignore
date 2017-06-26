@@ -19,3 +19,8 @@
 *.iml
 *.idea
 *.log
+build.xml
+/nbproject
+/test
+/dist
+
