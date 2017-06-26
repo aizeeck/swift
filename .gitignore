@@ -20,7 +20,7 @@
 *.idea
 *.log
 build.xml
-/nbproject
-/test
-/dist
+nbproject/
+test/
+dist/
 
