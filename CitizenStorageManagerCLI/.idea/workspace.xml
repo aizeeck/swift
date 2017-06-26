@@ -2,46 +2,64 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e1f41d0e-07e0-4f8e-882d-d5ffbf22b6c8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DynamicWebApp/.idea/compiler.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DynamicWebApp/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DynamicWebApp/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DynamicWebApp/web/showinfo.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StaticWebApp/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StaticWebApp/web/bubs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StaticWebApp/web/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StaticWebApp/web/segey.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer/AddressStorage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer/CitizenStorage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer/DALException.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer/MySQLCredential.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer/SocialInsuranceStorage.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataObjectsFactories/AddressFactory.java" afterPath="$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/AddressFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/DataObjectsFactories/EducationFactory.java" afterPath="$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/EducationFactory.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/AddressMySqlDAO.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/dao/AddressMySqlDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/AddressStorage.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/storages/AddressStorage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/CitizenMySqlDAO.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/dao/CitizenMySqlDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorage.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/storages/CitizenStorage.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorageEmptyDAO.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/dao/CitizenStorageEmptyDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/DALException.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/exceptions/DALException.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/MySQLCredential.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/credentials/MySQLCredential.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceInsertionAPI.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/storages/SocialInsuranceInsertionAPI.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceMySqlDAO.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/dao/SocialInsuranceMySqlDAO.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceStorage.java" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/storages/SocialInsuranceStorage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CitizenStorageManagerCLI/CitizenStorageManagerCLI.class" afterPath="$PROJECT_DIR$/out/production/CitizenStorageManagerCLI/CitizenStorageManagerCLI.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson14/Task0_Sakila/ActorDAO.class" afterPath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson14/Task0_Sakila/ActorDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson14/Task0_Sakila/FilmDAO.class" afterPath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson14/Task0_Sakila/FilmDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson14/Task0_Sakila/MySQLCredential.class" afterPath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson14/Task0_Sakila/MySQLCredential.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson14/Task0_Sakila/Task0_Sakila.class" afterPath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson14/Task0_Sakila/Task0_Sakila.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/dao/MySqlEducationStorage.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../DataAccessLayer/src/storages/EducationStorage.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../CitizenManagement/web/error.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../CitizenManagement/web/loginChecker.jsp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/CitizenStorageManagerCLI/CitizenStorageManagerCLI.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/AddressMySqlDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/AddressStorage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/CitizenMySqlDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/CitizenStorage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/DALException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/MySQLCredential.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/SocialInsuranceInsertionAPI.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/SocialInsuranceMySqlDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DataAccessLayer1/SocialInsuranceStorage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/.idea/kotlinc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/.idea/uiDesigner.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/.idea/vcs.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/DataAccessLayer.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/dao/CitizenMySqlDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/dao/CitizenStorageEmptyDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/dao/SocialInsuranceMySqlDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/exceptions/DALException.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataAccessLayer/AddressDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataAccessLayer/AddressStorage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataAccessLayer/CitizenDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataAccessLayer/CitizenStorage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataAccessLayer/DALException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataAccessLayer/MySQLCredential.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataAccessLayer/SocialInsuranceDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataAccessLayer/SocialInsuranceStorage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/address/Address.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/education/Education.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/education/EducationDegree.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/education/GradedEducation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/education/HigherEducation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/education/PrimaryEducation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/education/SecondaryEducation.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/insurance/SocialInsuranceRecord.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/personaldetails/Citizen.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/out/production/DataObjects/personaldetails/Gender.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/credentials/MySQLCredential.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/src/dao/AddressMySqlDAO.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/storages/AddressStorage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/storages/CitizenStorage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/storages/SocialInsuranceInsertionAPI.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataAccessLayer/storages/SocialInsuranceStorage.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataObjects/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataObjects/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataObjects/.idea/workspace.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../DataObjects/DataObjects.iml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CitizenStorageManagerCLI.iml" afterPath="$PROJECT_DIR$/CitizenStorageManagerCLI.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CitizenStorageManagerCLI.java" afterPath="$PROJECT_DIR$/src/CitizenStorageManagerCLI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataAccessLayer/DataAccessLayer.iml" afterPath="$PROJECT_DIR$/../DataAccessLayer/DataAccessLayer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataObjects/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../DataObjects/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SwiftHomeWork/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../SwiftHomeWork/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SwiftHomeWork/SwiftHomeWork.iml" afterPath="$PROJECT_DIR$/../SwiftHomeWork/SwiftHomeWork.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson13_DBMS/SQLs.sql" afterPath="$PROJECT_DIR$/../SwiftHomeWork/out/production/SwiftHomeWork/lesson13_DBMS/SQLs.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SwiftHomeWork/src/lesson16_Regex_Lambda_JUnit/Task3_PersonCharacteristics.java" afterPath="$PROJECT_DIR$/../SwiftHomeWork/src/lesson16_Regex_Lambda_JUnit/Task3_PersonCharacteristics.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/EducationFactory.java" afterPath="$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/EducationFactory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,94 +72,12 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="CitizenStorageManagerCLI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CitizenStorageManagerCLI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CitizenStorageManagerCLI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="412">
-              <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#CitizenStorageManagerCLI#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CitizenMySqlDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/CitizenMySqlDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="50" column="66" lean-forward="true" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
-              <folding>
-                <marker date="1497772207991" expanded="true" signature="2027:2062" ph=" SELECT statement (CITIZENS)" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddressMySqlDAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/AddressMySqlDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="71" column="54" lean-forward="true" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
-              <folding>
-                <marker date="1497777890430" expanded="true" signature="2440:2484" ph=" SELECT statement (ADDRESSES)" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddressFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/AddressFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" column="57" lean-forward="false" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
+            <state relative-caret-position="16">
+              <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EducationFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/EducationFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="832">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HigherEducation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../DataObjects/src/education/HigherEducation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GradedEducation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../DataObjects/src/education/GradedEducation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PrimaryEducation.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../DataObjects/src/education/PrimaryEducation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-              <folding>
-                <element signature="e#322#323#0" expanded="false" />
-                <element signature="e#368#369#0" expanded="false" />
-                <element signature="e#416#417#0" expanded="false" />
-                <element signature="e#452#453#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -155,6 +91,11 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>edu</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -179,16 +120,20 @@
         <option value="$PROJECT_DIR$/../DataAccessLayer/src/AddressMySqlDAO.java" />
         <option value="$PROJECT_DIR$/src/DataObjectsFactories/EducationFactory.java" />
         <option value="$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorageEmptyDAO.java" />
-        <option value="$PROJECT_DIR$/src/CitizenStorageManagerCLI.java" />
         <option value="$PROJECT_DIR$/../DataAccessLayer/src/dao/CitizenMySqlDAO.java" />
         <option value="$PROJECT_DIR$/../DataAccessLayer/src/dao/AddressMySqlDAO.java" />
+        <option value="$PROJECT_DIR$/../DataAccessLayer/src/dao/CitizenStorageEmptyDAO.java" />
+        <option value="$PROJECT_DIR$/../DataAccessLayer/src/dao/EducationStorage.java" />
+        <option value="$PROJECT_DIR$/../DataAccessLayer/src/dao/MySqlEducationStorage.java" />
+        <option value="$PROJECT_DIR$/../DataAccessLayer/dao/EducationStorage.java" />
+        <option value="$PROJECT_DIR$/../DataAccessLayer/dao/MySqlEducationStorage.java" />
+        <option value="$PROJECT_DIR$/src/CitizenStorageManagerCLI.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1366" />
-    <option name="width" value="1680" />
-    <option name="height" value="1002" />
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -206,9 +151,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -231,31 +175,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CitizenStorageManagerCLI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CitizenStorageManagerCLI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataObjects" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DataAccessLayer" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../DataAccessLayer/src/dao" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../DataObjects/src/address" />
+      <recent name="$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -289,7 +229,7 @@
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="CitizenStorageManagerCLI" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/../../swift-4/materials/00_CourseControl/in_100000&quot;" />
+      <option name="PROGRAM_PARAMETERS" value="&quot;$PROJECT_DIR$/../../swift-4/materials/00_CourseControl/in_10&quot;" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -468,26 +408,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="OdpsJavaConfigurationType" factoryName="MaxCompute Java">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <odpsJavaType />
-      <odpsProjectName />
-      <tableName />
-      <tableColumns />
-      <tablePartition />
-      <method />
-    </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -585,7 +505,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="0" width="1680" height="1002" extended-state="6" />
+    <frame x="0" y="0" width="1366" height="768" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -600,18 +520,17 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3693901" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36906078" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23990773" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27797002" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27734807" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22031824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22348484" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -619,6 +538,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23977901" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -632,7 +552,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="13" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -641,120 +561,16 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceMySqlDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="63" column="62" lean-forward="false" selection-start-line="63" selection-start-column="62" selection-end-line="63" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/MySQLCredential.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/MySQLCredential.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/MySQLCredential.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceStorage.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/MySQLCredential.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorage.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressStorage.java" />
     <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceMySqlDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/CitizenStorageManagerCLI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1326">
           <caret line="78" column="9" lean-forward="true" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CitizenStorageManagerCLI#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -763,10 +579,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CitizenStorageManagerCLI#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -774,10 +587,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CitizenStorageManagerCLI#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -804,13 +614,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../DataObjects/DataObjects.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataObjects/DataObjects.iml" />
     <entry file="file://$PROJECT_DIR$/../DataObjects/src/personaldetails/Gender.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -818,161 +622,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../DataObjects/src/personaldetails/Citizen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/src.zip!/java/util/function/Consumer.java" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy" />
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/NumberFormatException.java" />
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceInsertionAPI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="17" lean-forward="false" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceStorage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/MySQLCredential.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenMySqlDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceInsertionAPI.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressStorage.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorage.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceStorage.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/MySQLCredential.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenMySqlDAO.java" />
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Exception.java" />
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/lang/Throwable.java" />
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/DALException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="37" lean-forward="true" selection-start-line="3" selection-start-column="37" selection-end-line="3" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceMySqlDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="51" column="34" lean-forward="false" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressMySqlDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorageEmptyDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/DALException.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/SocialInsuranceMySqlDAO.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/AddressMySqlDAO.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/CitizenStorageEmptyDAO.java" />
     <entry file="file://$PROJECT_DIR$/../DataObjects/src/education/PrimaryEducation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
+        <state relative-caret-position="102">
           <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-          <folding>
-            <element signature="e#322#323#0" expanded="false" />
-            <element signature="e#368#369#0" expanded="false" />
-            <element signature="e#416#417#0" expanded="false" />
-            <element signature="e#452#453#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../DataObjects/src/education/HigherEducation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
+        <state relative-caret-position="68">
           <caret line="4" column="41" lean-forward="false" selection-start-line="4" selection-start-column="41" selection-end-line="4" selection-end-column="41" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../DataObjects/src/education/GradedEducation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
+        <state relative-caret-position="153">
           <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/AddressFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="187">
           <caret line="11" column="57" lean-forward="false" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/EducationFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="832">
+        <state relative-caret-position="884">
           <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/CitizenMySqlDAO.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/AddressMySqlDAO.java" />
+    <entry file="file://$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/EducationFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/storages/SocialInsuranceInsertionAPI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/sql/Connection.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/CitizenStorageEmptyDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="12" lean-forward="false" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/MySqlEducationStorage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1479">
+          <caret line="105" column="0" lean-forward="true" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/SocialInsuranceMySqlDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/EducationStorage.java" />
+    <entry file="file://$PROJECT_DIR$/../DataObjects/src/personaldetails/Citizen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataObjects/src/DataObjectsFactories/AddressFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="18" lean-forward="false" selection-start-line="0" selection-start-column="18" selection-end-line="0" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/storages/SocialInsuranceStorage.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/dao/EducationStorage.java" />
+    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/dao/MySqlEducationStorage.java" />
     <entry file="file://$PROJECT_DIR$/src/CitizenStorageManagerCLI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="33" column="31" lean-forward="true" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#CitizenStorageManagerCLI#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/CitizenMySqlDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="50" column="66" lean-forward="true" selection-start-line="50" selection-start-column="66" selection-end-line="50" selection-end-column="66" />
-          <folding>
-            <marker date="1497772207991" expanded="true" signature="2027:2062" ph=" SELECT statement (CITIZENS)" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../DataAccessLayer/src/dao/AddressMySqlDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="71" column="54" lean-forward="true" selection-start-line="71" selection-start-column="54" selection-end-line="71" selection-end-column="54" />
-          <folding>
-            <marker date="1497777890430" expanded="true" signature="2440:2484" ph=" SELECT statement (ADDRESSES)" />
-          </folding>
+        <state relative-caret-position="16">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1028,11 +788,12 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>DataAccessLayer</last-edited>
+          <last-edited>DataObjects</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

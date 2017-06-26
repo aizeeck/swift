@@ -5,9 +5,9 @@ import address.Address;
 /**
  * Created by aizeeck on 27.05.17.
  */
-public class AddressFactory {
+public class AddressParser {
 
-    private AddressFactory() {}
+    private AddressParser() {}
 
     public static Address createAddress(String[] personSplit) {
         if (personSplit.length < 13 || (personSplit[12].equals("") || personSplit[13].equals(""))) {

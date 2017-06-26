@@ -1,5 +1,6 @@
-import DataObjectsFactories.AddressFactory;
-import DataObjectsFactories.EducationFactory;
+package console;
+import DataObjectsFactories.AddressParser;
+import DataObjectsFactories.EducationParser;
 import address.Address;
 import credentials.MySQLCredential;
 import dao.AddressMySqlDAO;
@@ -13,6 +14,8 @@ import personaldetails.Citizen;
 import personaldetails.Gender;
 import storages.AddressStorage;
 import storages.CitizenStorage;
+import storages.EducationStorage;
+import dao.MySqlEducationStorage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,6 +25,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -32,6 +36,7 @@ public class CitizenStorageManagerCLI {
 
     public static void main(String[] args) throws FileNotFoundException, SQLException, DALException {
         Scanner scanner = null;
+        System.out.println(Arrays.toString(args));
         if (args.length != 0) {
             File dataFile = new File(args[0]);
             scanner = new Scanner(new FileReader(dataFile));
@@ -39,11 +44,10 @@ public class CitizenStorageManagerCLI {
             scanner = new Scanner(System.in);
         }
 
-        System.out.println("please type the database password for user azieeck");
         MySQLCredential mySQLCredential = new MySQLCredential(
-                "jdbc:mysql://aizeeck.no-ip.org:3306/CitizenManagement",
-                "aizeeck",
-                new Scanner(System.in).nextLine());
+                "jdbc:mysql://localhost:3306/CitizenManagement",
+                "root",
+                "jeans4587");
 
         trancateTables(mySQLCredential);
         dataImport(scanner, mySQLCredential);
@@ -76,10 +80,12 @@ public class CitizenStorageManagerCLI {
                     Integer.parseInt(personSplit[5]),
                     LocalDate.parse(personSplit[4], formatter)
             );
+            List<Education> educations = new ArrayList<>();
             if (personSplit.length > 14) {
-                Education education = EducationFactory.createEducation(personSplit);
+                educations = EducationParser.createEducation(personSplit);
             }
-            Address address = AddressFactory.createAddress(personSplit);
+
+            Address address = AddressParser.createAddress(personSplit);
 
             //instance DAOs
             CitizenStorage citizenDAO = new CitizenMySqlDAO(mySQLCredential);
@@ -103,6 +109,13 @@ public class CitizenStorageManagerCLI {
 
             //write to db the list of the citizen's insurances
             socialInsuranceDAO.insert(socialInsuranceRecords, citizenId);
+            
+            EducationStorage educationStorage = new MySqlEducationStorage(mySQLCredential);
+            if (educations.size() > 0) {
+                for (Education education : educations) {
+                    educationStorage.insert(education, citizenId);
+                }
+            }
         }
         System.out.println(LocalDateTime.now());
     }
