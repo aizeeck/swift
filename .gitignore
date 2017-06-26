@@ -16,3 +16,6 @@
 /CitizenStorageManagerCLI/nbproject/private/
 /CitizenStorageManagerCLI/build/
 /CitizenStorageManagerCLI/dist/
+*.iml
+*.idea
+*.log
