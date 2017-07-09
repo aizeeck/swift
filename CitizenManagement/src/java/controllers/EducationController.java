@@ -33,7 +33,7 @@ public class EducationController {
         mySQLCredential = new MySQLCredential(
                 "jdbc:mysql://localhost:3306/CitizenManagement",
                 "root",
-                "jeans4587"
+                "root"
         );
     }
     

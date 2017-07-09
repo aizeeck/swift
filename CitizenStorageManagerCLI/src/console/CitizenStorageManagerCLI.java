@@ -47,9 +47,9 @@ public class CitizenStorageManagerCLI {
         MySQLCredential mySQLCredential = new MySQLCredential(
                 "jdbc:mysql://localhost:3306/CitizenManagement",
                 "root",
-                "jeans4587");
+                "root");
 
-        trancateTables(mySQLCredential);
+        //trancateTables(mySQLCredential);
         dataImport(scanner, mySQLCredential);
     }
 

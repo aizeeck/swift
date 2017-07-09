@@ -34,7 +34,7 @@ public class CitizensController {
         mySQLCredential = new MySQLCredential(
                 "jdbc:mysql://localhost:3306/CitizenManagement",
                 "root",
-                "jeans4587"
+                "root"
         );
     }
 
@@ -47,12 +47,11 @@ public class CitizensController {
         
         citizen.get(0).setAddress(addressMySqlDAO.select(id));
         
-        List<Education> educations = new ArrayList<>();
-        educations = EducationController.getEducations(id);
+        List<Education> educations = controllers.EducationController.getEducations(id);
         educations.forEach((education) -> citizen.get(0).addEducation(education));
         
         List<SocialInsuranceRecord> insurances;
-        insurances = InsuranceController.getInsurancesSorted(id);
+        insurances = controllers.InsuranceController.getInsurancesSorted(id);
         insurances.forEach((insurance) -> citizen.get(0).addSocialInsuranceRecord(insurance));
         
         return citizen.get(0);
